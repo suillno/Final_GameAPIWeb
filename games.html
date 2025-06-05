@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>게임 목록</title>
+  <style>
+	#gameList {
+	  display: flex;
+	  flex-wrap: wrap;
+	  gap: 1rem; /* 간격 추가 */
+	  padding: 0;
+	  list-style: none;
+	  justify-content: center;
+	  max-width: 100%;
+	}
+
+	#gameList li {
+	  box-sizing: border-box;
+	  padding: 10px;
+	  border: 1px solid #ccc;
+	  text-align: center;
+	  flex: 1 1 calc(25% - 1rem); /* 기본: 4개 */
+	}
+
+	/* 화면이 1024px 이하일 때: 3개씩 */
+	@media (max-width: 1024px) {
+	  #gameList li {
+	    flex: 1 1 calc(33.333% - 1rem);
+	  }
+	}
+
+	/* 화면이 768px 이하일 때: 2개씩 */
+	@media (max-width: 768px) {
+	  #gameList li {
+	    flex: 1 1 calc(50% - 1rem);
+	  }
+	}
+
+	/* 화면이 480px 이하일 때: 1개씩 */
+	@media (max-width: 480px) {
+	  #gameList li {
+	    flex: 1 1 100%;
+	  }
+	}
+  </style>
+</head>
+<body>
+  <h2>🎮 인기 게임 목록</h2>
+  <ul id="gameList"></ul>
+
+  <script>
+    const apiKey = '603d4e2a9a0c480a82b67da9e92f0f68';
+
+    fetch(`https://api.rawg.io/api/games?key=${apiKey}&page_size=10`)
+      .then(response => response.json())
+      .then(data => {
+        const list = document.getElementById("gameList");
+        data.results.forEach(game => {
+          const li = document.createElement("li");
+          li.innerHTML = `
+            <strong>${game.name}</strong><br />
+            <img src="${game.background_image}" alt="${game.name}" width="300" />
+            <p>Rating: ${game.rating}</p>
+          `;
+          list.appendChild(li);
+        });
+      })
+      .catch(error => {
+        console.error("에러 발생:", error);
+      });
+  </script>
+</body>
+</html>
