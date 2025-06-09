@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <title>Humble</title>
+  <link rel="stylesheet" th:href="@{/css/index.css}" />
+</head>
+<body>
+
+  <!-- 공통 헤더 -->
+  <th:block th:replace="fragments/header :: header"></th:block>
+
+  <!-- 개별 페이지 내용 삽입 -->
+  <div layout:fragment="content"></div>
+
+  <!-- 공통 푸터 -->
+  <th:block th:replace="fragments/footer :: footer"></th:block>
+
+</body>
+</html>
