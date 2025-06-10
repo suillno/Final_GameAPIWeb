@@ -1,5 +1,5 @@
 // Sidebar.tsx
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import sidebarIcon from "../img/sidebar.png";
 
@@ -13,6 +13,10 @@ const SidebarContainer = styled.nav`
   top: 60px;
   left: 0;
   overflow-y: auto;
+
+  &.active {
+    display: block;
+  }
 
   @media (max-width: 768px) {
     display: none;
@@ -65,17 +69,21 @@ const SidebarIcon = styled.img`
   display: block;
 `;
 
-const sidebarToggle = () => {};
-
 const Sidebar = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const sidebarToggle = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <>
+      {/* 반응형 버튼 클릭시 사이드바 표기 */}
       <SidebarDiv>
         <button type="button" onClick={sidebarToggle}>
           <SidebarIcon src={sidebarIcon}></SidebarIcon>
         </button>
       </SidebarDiv>
-      <SidebarContainer>
+      <SidebarContainer className={isOpen ? `active` : ""}>
         <Section>
           <MenuItem>Home</MenuItem>
           <MenuItem>Reviews</MenuItem>

@@ -34,8 +34,13 @@ const Card = styled.div`
 
   img {
     width: 100%;
+    height: 174px;
     border-radius: 4px;
     background-color: #555;
+
+    @media (max-width: 768px) {
+      height: 300px;
+    }
   }
 
   p {
@@ -52,12 +57,8 @@ const Card = styled.div`
     color: #1ea7fd;
   }
 
-  @media (max-width: 1024px) {
-    width: calc(33.333% - 16px);
-  }
-
   @media (max-width: 768px) {
-    width: calc(50% - 16px);
+    width: 100%;
   }
 
   @media (max-width: 480px) {

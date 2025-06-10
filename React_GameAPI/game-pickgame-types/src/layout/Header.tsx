@@ -16,14 +16,6 @@ const Logo = styled.div`
   font-weight: bold;
 `;
 
-const Nav = styled.nav`
-  a {
-    margin: 0 10px;
-    color: #fff;
-    text-decoration: none;
-  }
-`;
-
 const HeaderRight = styled.div`
   display: flex;
   align-items: center;
@@ -52,14 +44,9 @@ const Header: React.FC = () => {
   return (
     <HeaderWrapper>
       <Logo>Humble</Logo>
-      <Nav>
-        <a href="#">번들</a>
-        <a href="#">가게</a>
-        <a href="#">선택</a>
-      </Nav>
       <HeaderRight>
-        <input type="text" placeholder="검색" />
         <button type="button">🔍</button>
+        <input type="text" placeholder="검색" />
         <a href="member/signup.html">회원가입</a>
         <a href="member/login.html">로그인</a>
       </HeaderRight>
