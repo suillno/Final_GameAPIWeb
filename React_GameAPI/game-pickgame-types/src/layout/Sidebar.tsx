@@ -62,6 +62,16 @@ let SidebarDiv = styled.div`
   }
 `;
 
+let SidebarClose = styled.div`
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+    background-color: #1e1f24; // 배경색 지정으로 흰줄 방지
+    position: relative;
+  }
+`;
+
 const SidebarIcon = styled.img`
   width: 32px;
   height: 32px;
@@ -84,6 +94,11 @@ const Sidebar = () => {
         </button>
       </SidebarDiv>
       <SidebarContainer className={isOpen ? `active` : ""}>
+        <SidebarClose>
+          <button type="button" onClick={sidebarToggle}>
+            <SidebarIcon src={sidebarIcon}></SidebarIcon>
+          </button>
+        </SidebarClose>
         <Section>
           <MenuItem>Home</MenuItem>
           <MenuItem>Reviews</MenuItem>
