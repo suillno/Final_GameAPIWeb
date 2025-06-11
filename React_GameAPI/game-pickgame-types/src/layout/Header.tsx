@@ -1,6 +1,7 @@
 // ✅ Header.tsx
 import React from "react";
 import styled from "styled-components";
+import sidebarIcon from "../img/sidebar.png";
 
 const HeaderWrapper = styled.header`
   display: flex;
@@ -9,6 +10,17 @@ const HeaderWrapper = styled.header`
   background-color: #3b3e45;
   padding: 12px 24px;
   flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+`;
+
+const SidebarIcon = styled.img`
+  width: 32px;
+  height: 32px;
+  filter: invert(1);
 `;
 
 const Logo = styled.div`
@@ -40,9 +52,16 @@ const HeaderRight = styled.div`
   }
 `;
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  onSidebarToggle: () => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ onSidebarToggle }) => {
   return (
     <HeaderWrapper>
+      <button onClick={onSidebarToggle}>
+        <SidebarIcon src={sidebarIcon} />
+      </button>
       <Logo>Humble</Logo>
       <HeaderRight>
         <button type="button">🔍</button>

@@ -1,16 +1,12 @@
 import React from "react";
 import GlobalStyle from "./style/GlobalReset";
-import Header from "./layout/Header";
-import MainPage from "./layout/MainPage";
-import Sidebar from "./layout/Sidebar";
+import Layout from "./layout/Layout";
 
 function App() {
   return (
     <div className="App">
       <GlobalStyle />
-      <Header />
-      <Sidebar />
-      <MainPage />
+      <Layout />
     </div>
   );
 }
