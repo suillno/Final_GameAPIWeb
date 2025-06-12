@@ -60,12 +60,6 @@ interface SidebarProps {
 const Sidebar: React.FC<SidebarProps> = ({ isOpen, setIsOpen }) => {
   return (
     <SidebarContainer isOpen={isOpen}>
-      <SidebarClose>
-        <button onClick={() => setIsOpen(false)}>
-          <SidebarIcon src={sidebarIcon} />
-        </button>
-      </SidebarClose>
-
       <Section>
         <MenuItem>Home</MenuItem>
         <MenuItem>Reviews</MenuItem>
