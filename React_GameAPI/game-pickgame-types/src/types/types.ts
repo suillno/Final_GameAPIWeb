@@ -1,5 +1,3 @@
-import exp from "constants";
-
 // 전체 API 응답 최상위 객체
 export interface GameResponse {
   count: number; // 전체 게임 수
@@ -49,6 +47,32 @@ export interface GameResult {
   esrb_rating: ESRBRating; // ESRB 등급
   short_screenshots: Screenshot[]; // 스크린샷 리스트
 }
+
+// 플랫폼 아이콘화
+export const platformIcons: { [key: string]: string } = {
+  pc: "PC",
+  playstation4: "PS4",
+  playstation5: "PS5",
+  xboxone: "XBOX",
+  xboxseriesx: "XBOX",
+  nintendo: "NS",
+  switch: "NS",
+  ios: "iOS",
+  android: "AOS",
+};
+
+// 플랫폼 아이콘 테두리 색상
+export const platformBorderColors: { [key: string]: string } = {
+  pc: "#4a90e2",
+  playstation4: "#3b5998",
+  playstation5: "#3b5998",
+  xboxone: "#107c10",
+  xboxseriesx: "#107c10",
+  nintendo: "#e60012",
+  switch: "#e60012",
+  ios: "#999999",
+  android: "#3ddc84",
+};
 
 // 평점 상세 구조
 export interface Rating {

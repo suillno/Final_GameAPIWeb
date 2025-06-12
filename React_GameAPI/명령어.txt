@@ -10,6 +10,8 @@ yarn create react-app 파일명 --template typescript
 2. 리엑트 라우터, 엑시오스, 스타일컴포넌트 다운
 yarn add react-router-dom axios styled-components
 
+3. 아이콘 사용 다운
+yarn add react-icons
 
 프로젝트 시작
 yarn start
