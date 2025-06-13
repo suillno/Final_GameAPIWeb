@@ -9,7 +9,12 @@ import {
 } from "../types/types";
 import { apiGetGameList } from "../api/api";
 import Loader from "../components/common/Loader";
-import { Link } from "react-router-dom";
+import { Link, useOutletContext } from "react-router-dom";
+
+// LayoutContext 인터페이스 정의 (Outlet에서 받을 타입)
+interface LayoutContext {
+  isSidebarOpen: boolean;
+}
 
 // 메인 컨테이너 (사이드바 열림에 따라 margin 변경, 반응형 대응)
 const MainContainer = styled.div<{ isSidebarOpen: boolean }>`
@@ -71,28 +76,18 @@ const PlatformSpan = styled.span<{ platform: string }>`
   color: white;
 `;
 
-// 사이드바 Props 타입
-interface MainPageProps {
-  isSidebarOpen: boolean;
-}
+const MainPage: React.FC = () => {
+  const { isSidebarOpen } = useOutletContext<LayoutContext>(); // ✅ 이제 context로 받음
 
-const MainPage: React.FC<MainPageProps> = ({ isSidebarOpen }) => {
-  // API 전체 응답 상태값
   const [gameResponse, setGameResponse] =
     useState<GameResponse>(defaultGameResponse);
-
-  // 페이지 번호 상태값 (더보기 클릭 시 증가)
   const [pageCount, setPageCount] = useState<number>(1);
-
-  // 로딩 상태값
   const [isLoading, setIsLoading] = useState(false);
 
-  // 다음 페이지 호출
   const pageNext = () => {
     setPageCount((prev) => prev + 1);
   };
 
-  // API 호출 함수 (기존 데이터에 누적)
   const getGameList = (pageCount: number) => {
     setIsLoading(true);
     apiGetGameList(pageCount)
@@ -106,7 +101,6 @@ const MainPage: React.FC<MainPageProps> = ({ isSidebarOpen }) => {
       .finally(() => setIsLoading(false));
   };
 
-  // 마운트 및 pageCount 변경 시마다 호출
   useEffect(() => {
     getGameList(pageCount);
   }, [pageCount]);
@@ -128,7 +122,6 @@ const MainPage: React.FC<MainPageProps> = ({ isSidebarOpen }) => {
               alt={item.name}
               className="w-full h-[174px] md:h-[300px] bg-[#555] object-cover"
             />
-
             <div className="p-2">
               {item.platforms
                 .filter((p) => !!platformIcons[p.platform.slug?.toLowerCase()])
@@ -141,11 +134,9 @@ const MainPage: React.FC<MainPageProps> = ({ isSidebarOpen }) => {
                   );
                 })}
             </div>
-
             <p className="mt-2 mb-1 font-bold text-ellipsis overflow-hidden whitespace-normal line-clamp-2 p-2">
               {item.name}
             </p>
-
             <div className="flex justify-between p-2 text-sm">
               <span>➕{item.added ?? "미출시"}</span>
               <span>평점: {item.rating ?? "미출시"}</span>
@@ -165,10 +156,11 @@ const MainPage: React.FC<MainPageProps> = ({ isSidebarOpen }) => {
       {isLoading ? (
         <Loader />
       ) : (
-        <div className="flex justify-center mt-8">
+        <div className="flex justify-center mt-8 h-35 ">
           <button
             type="button"
             className="w-24 h-12 bg-blue-500 text-white rounded text-center"
+            style={{ marginTop: "2em", fontWeight: "600" }}
             onClick={pageNext}
           >
             더보기
