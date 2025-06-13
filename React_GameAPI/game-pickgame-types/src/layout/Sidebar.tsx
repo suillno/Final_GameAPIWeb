@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import sidebarIcon from "../img/sidebar.png";
 
 const SidebarContainer = styled.nav<{ isOpen: boolean }>`
   width: 240px;
@@ -12,7 +11,8 @@ const SidebarContainer = styled.nav<{ isOpen: boolean }>`
   top: 60px;
   left: ${({ isOpen }) => (isOpen ? "0" : "-240px")};
   transition: left 0.3s ease;
-  overflow-y: auto;
+  overflow-y: 1000;
+  z-index: 1000;
 
   @media (max-width: 768px) {
     top: 60px;

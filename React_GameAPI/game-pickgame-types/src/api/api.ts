@@ -11,3 +11,13 @@ export const apiGetGameList = async (pageNext: number) => {
     })
     .then((res) => res.data);
 };
+
+export const apiGetGameDetail = async (gameId: string) => {
+  return await instance
+    .get(`/${gameId}`, {
+      params: {
+        key: process.env.REACT_APP_API_KEY,
+      },
+    })
+    .then((res) => res.data);
+};

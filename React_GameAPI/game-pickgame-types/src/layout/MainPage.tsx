@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import {
+  defaultGameResponse,
   GameResponse,
   GameResult,
   platformBorderColors,
@@ -8,6 +9,7 @@ import {
 } from "../types/types";
 import { apiGetGameList } from "../api/api";
 import Loader from "../components/common/Loader";
+import { Link } from "react-router-dom";
 
 // 메인 컨테이너 (사이드바 열림에 따라 margin 변경, 반응형 대응)
 const MainContainer = styled.div<{ isSidebarOpen: boolean }>`
@@ -51,7 +53,7 @@ const ExpandSection = styled.div`
   overflow: hidden;
   transition: max-height 0.5s ease;
   ${GameCard}:hover & {
-    max-height: 200px;
+    max-height: 300px;
   }
 `;
 
@@ -76,21 +78,8 @@ interface MainPageProps {
 
 const MainPage: React.FC<MainPageProps> = ({ isSidebarOpen }) => {
   // API 전체 응답 상태값
-  const [gameResponse, setGameResponse] = useState<GameResponse>({
-    count: 0,
-    next: null,
-    previous: null,
-    results: [],
-    seo_title: "",
-    seo_description: "",
-    seo_keywords: "",
-    seo_h1: "",
-    noindex: false,
-    nofollow: false,
-    description: "",
-    filters: null,
-    nofollow_collections: [],
-  });
+  const [gameResponse, setGameResponse] =
+    useState<GameResponse>(defaultGameResponse);
 
   // 페이지 번호 상태값 (더보기 클릭 시 증가)
   const [pageCount, setPageCount] = useState<number>(1);
@@ -140,7 +129,7 @@ const MainPage: React.FC<MainPageProps> = ({ isSidebarOpen }) => {
               className="w-full h-[174px] md:h-[300px] bg-[#555] object-cover"
             />
 
-            <div className="p-2 flex flex-wrap">
+            <div className="p-2">
               {item.platforms
                 .filter((p) => !!platformIcons[p.platform.slug?.toLowerCase()])
                 .map((p, idx) => {
@@ -161,13 +150,14 @@ const MainPage: React.FC<MainPageProps> = ({ isSidebarOpen }) => {
               <span>➕{item.added ?? "미출시"}</span>
               <span>평점: {item.rating ?? "미출시"}</span>
             </div>
-
-            <ExpandSection>
-              <div className="p-2 text-xs">
-                <div>Release date: {item.released ?? "미정"}</div>
-                <div>Genres: {item.genres.map((g) => g.name).join(", ")}</div>
-              </div>
-            </ExpandSection>
+            <Link to={`/game/${item.id}`}>
+              <ExpandSection>
+                <div className="p-2 text-xs">
+                  <div>Release date: {item.released ?? "미정"}</div>
+                  <div>Genres: {item.genres.map((g) => g.name).join(", ")}</div>
+                </div>
+              </ExpandSection>
+            </Link>
           </GameCard>
         ))}
       </MainContainer>

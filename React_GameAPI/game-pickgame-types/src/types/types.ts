@@ -15,11 +15,28 @@ export interface GameResponse {
   nofollow_collections: any[];
 }
 
+export const defaultGameResponse: GameResponse = {
+  count: 0,
+  next: null,
+  previous: null,
+  results: [],
+  seo_title: "",
+  seo_description: "",
+  seo_keywords: "",
+  seo_h1: "",
+  noindex: false,
+  nofollow: false,
+  description: "",
+  filters: null,
+  nofollow_collections: [],
+};
+
 // 개별 게임 정보
 export interface GameResult {
   id: number; // 게임 ID
   slug: string; // URL friendly ID
   name: string; // 게임 이름
+  description: string;
   released: string; // 출시일 (YYYY-MM-DD)
   tba: boolean; // 출시일 미정 여부
   background_image: string; // 대표 이미지 URL
@@ -47,6 +64,51 @@ export interface GameResult {
   esrb_rating: ESRBRating; // ESRB 등급
   short_screenshots: Screenshot[]; // 스크린샷 리스트
 }
+
+// 개별 게임 정보 기본값 설정
+export const defaultGameResult: GameResult = {
+  id: 0,
+  slug: "",
+  name: "",
+  description: "",
+  released: "",
+  tba: false,
+  background_image: "",
+  rating: 0,
+  rating_top: 0,
+  ratings: [],
+  ratings_count: 0,
+  reviews_text_count: 0,
+  added: 0,
+  added_by_status: {
+    yet: 0,
+    owned: 0,
+    beaten: 0,
+    toplay: 0,
+    dropped: 0,
+    playing: 0,
+  },
+  metacritic: null,
+  playtime: 0,
+  suggestions_count: 0,
+  updated: "",
+  user_game: null,
+  reviews_count: 0,
+  saturated_color: "",
+  dominant_color: "",
+  platforms: [],
+  parent_platforms: [],
+  genres: [],
+  stores: [],
+  clip: null,
+  tags: [],
+  esrb_rating: {
+    id: 0,
+    name: "",
+    slug: "",
+  },
+  short_screenshots: [],
+};
 
 // 플랫폼 아이콘화
 export const platformIcons: { [key: string]: string } = {
