@@ -5,6 +5,7 @@ import MainPage from "./MainPage";
 
 function Layout() {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
+  const [selectedTab, setSelectedTab] = useState("home");
 
   const handleSidebarToggle = () => {
     setSidebarOpen(!isSidebarOpen);
@@ -13,8 +14,13 @@ function Layout() {
   return (
     <>
       <Header onSidebarToggle={handleSidebarToggle} />
-      <Sidebar isOpen={isSidebarOpen} setIsOpen={setSidebarOpen} />
-      <MainPage isSidebarOpen={isSidebarOpen} />
+      <Sidebar
+        isOpen={isSidebarOpen}
+        setIsOpen={setSidebarOpen}
+        selectedTab={selectedTab}
+        onSelectTab={setSelectedTab}
+      />
+      <MainPage isSidebarOpen={isSidebarOpen} selectedTab={selectedTab} />
     </>
   );
 }
