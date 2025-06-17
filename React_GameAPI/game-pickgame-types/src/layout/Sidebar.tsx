@@ -1,15 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const SidebarContainer = styled.nav<{ isOpen: boolean }>`
-  width: 240px;
+  width: 180px;
   height: 100vh;
   background-color: #1e1f24;
   color: white;
   padding: 20px;
   position: fixed;
   top: 60px;
-  left: ${({ isOpen }) => (isOpen ? "0" : "-240px")};
+  left: ${({ isOpen }) => (isOpen ? "0" : "-180px")};
   transition: left 0.3s ease;
   overflow-y: 1000;
   z-index: 1000;
@@ -61,19 +62,16 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, setIsOpen }) => {
   return (
     <SidebarContainer isOpen={isOpen}>
       <Section>
-        <MenuItem>Home</MenuItem>
+        <MenuItem className="font-bold">
+          <Link to={"/"}>Home</Link>
+        </MenuItem>
+        {/* 리뷰 추천수, 신규순 조회 */}
         <MenuItem>Reviews</MenuItem>
+        {/* 사용자페이지 */}
         <MenuItem>suillno 🔶</MenuItem>
+        {/* 장바구니 */}
         <MenuItem>Wishlist</MenuItem>
         <MenuItem>My Library</MenuItem>
-      </Section>
-
-      <Section>
-        <SectionTitle>New Releases</SectionTitle>
-        <MenuItem>Last 30 days</MenuItem>
-        <MenuItem>This week</MenuItem>
-        <MenuItem>Next week</MenuItem>
-        <MenuItem>Release calendar</MenuItem>
       </Section>
 
       <Section>

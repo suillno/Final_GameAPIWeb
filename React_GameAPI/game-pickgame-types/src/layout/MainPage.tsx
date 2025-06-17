@@ -11,12 +11,11 @@ import { apiGetGameList } from "../api/api";
 import Loader from "../components/common/Loader";
 import { Link, useOutletContext } from "react-router-dom";
 
-// LayoutContext 인터페이스 정의 (Outlet에서 받을 타입)
 interface LayoutContext {
   isSidebarOpen: boolean;
 }
 
-// 메인 컨테이너 (사이드바 열림에 따라 margin 변경, 반응형 대응)
+// 메인 컨테이너
 const MainContainer = styled.div<{ isSidebarOpen: boolean }>`
   margin-right: 5%;
   margin-left: ${(props) => (props.isSidebarOpen ? "300px" : "5%")};
@@ -40,67 +39,65 @@ const MainTitle = styled.h2<{ isSidebarOpen: boolean }>`
   }
 `;
 
-// 카드 전체 스타일 (hover 시 그림자 강조)
+// 게임 카드 (hover시 확대)
 const GameCard = styled.div`
   background-color: #2a2b32;
   border-radius: 10px;
   overflow: hidden;
-  transition: box-shadow 0.3s ease;
+  transition: all 0.4s ease;
   position: relative;
+  cursor: pointer;
+
   &:hover {
+    transform: scale(1.05);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   }
 `;
 
-// 상세정보 확장 부분 (hover 시 max-height 변경)
-const ExpandSection = styled.div`
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s ease;
+// 항상 표시될 기본정보 (이미지 아래에 배치)
+const InfoSection = styled.div`
+  padding: 0.8rem;
+  color: white;
+  background-color: #1e1f24;
+`;
+
+// hover 시 등장할 상세정보 (이미지 위 오버레이)
+const Overlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(30, 31, 36, 0.7);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  padding: 1rem;
+  color: white;
   ${GameCard}:hover & {
-    max-height: 300px;
+    opacity: 1;
   }
 `;
 
-// 플랫폼 아이콘 스타일
-const PlatformSpan = styled.span<{ platform: string }>`
-  display: inline-block;
-  padding: 2px 8px;
-  font-size: 10px;
-  font-weight: 600;
-  border: 1px solid ${({ platform }) => platformBorderColors[platform] ?? ""};
-  border-radius: 8px;
-  background-color: #1e1f24;
-  margin-right: 4px;
-  margin-bottom: 4px;
-  color: white;
-`;
-
 const MainPage: React.FC = () => {
-  const { isSidebarOpen } = useOutletContext<LayoutContext>(); // ✅ 이제 context로 받음
-
+  const { isSidebarOpen } = useOutletContext<LayoutContext>();
   const [gameResponse, setGameResponse] =
     useState<GameResponse>(defaultGameResponse);
   const [pageCount, setPageCount] = useState<number>(1);
   const [isLoading, setIsLoading] = useState(false);
 
-  const pageNext = () => {
-    setPageCount((prev) => prev + 1);
-  };
+  const pageNext = () => setPageCount((prev) => prev + 1);
 
   const getGameList = (pageCount: number) => {
     setIsLoading(true);
     apiGetGameList(pageCount)
       .then((res) => {
         const results = [...gameResponse.results, ...res.results];
-        setGameResponse({
-          ...res,
-          results: results,
-        });
+        setGameResponse({ ...res, results });
       })
       .finally(() => setIsLoading(false));
   };
 
+  // 페이지 카운트 버튼 클릭시 자동실행
   useEffect(() => {
     getGameList(pageCount);
   }, [pageCount]);
@@ -114,45 +111,36 @@ const MainPage: React.FC = () => {
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4"
       >
         {gameResponse.results.map((item: GameResult, idx: number) => (
-          <GameCard key={idx}>
-            <img
-              src={`https://media.rawg.io/media/resize/640/-/${
-                item.background_image.split("/media/")[1]
-              }`}
-              alt={item.name}
-              className="w-full h-[174px] md:h-[300px] bg-[#555] object-cover"
-            />
-            <div className="p-2">
-              {item.platforms
-                .filter((p) => !!platformIcons[p.platform.slug?.toLowerCase()])
-                .map((p, idx) => {
-                  const slug = p.platform.slug.toLowerCase();
-                  return (
-                    <PlatformSpan key={idx} platform={slug}>
-                      {platformIcons[slug]}
-                    </PlatformSpan>
-                  );
-                })}
-            </div>
-            <p className="mt-2 mb-1 font-bold text-ellipsis overflow-hidden whitespace-normal line-clamp-2 p-2">
-              {item.name}
-            </p>
-            <div className="flex justify-between p-2 text-sm">
-              <span>➕{item.added ?? "미출시"}</span>
-              <span>평점: {item.rating ?? "미출시"}</span>
-            </div>
-            <Link to={`/game/${item.id}`}>
-              <ExpandSection>
-                <div className="p-2 text-xs">
-                  <div>Release date: {item.released ?? "미정"}</div>
-                  <div>Genres: {item.genres.map((g) => g.name).join(", ")}</div>
+          <Link to={`/game/${item.id}`} key={idx}>
+            <GameCard>
+              {/* 이미지 표시 */}
+              <img
+                src={`https://media.rawg.io/media/resize/640/-/${
+                  item.background_image.split("/media/")[1]
+                }`}
+                alt={item.name}
+                className="w-full h-[174px] md:h-[300px] bg-[#555] object-cover"
+              />
+
+              {/* 항상 노출될 정보 (이미지 아래에 위치) */}
+              <InfoSection>
+                <div className="font-bold text-lg">{item.name}</div>
+                <div className="flex justify-between text-sm mt-1">
+                  <span>평점: {item.rating ?? "미출시"}</span>
+                  <span>출시: {item.released ?? "미정"}</span>
                 </div>
-              </ExpandSection>
-            </Link>
-          </GameCard>
+              </InfoSection>
+
+              {/* Hover 시 상세정보 오버레이 */}
+              <Overlay>
+                <div>장르: {item.genres.map((g) => g.name).join(", ")}</div>
+                <div>추가정보 준비 가능</div>
+              </Overlay>
+            </GameCard>
+          </Link>
         ))}
       </MainContainer>
-
+      {/* 로딩중 로더스피너 실행, 완료시 더보기 버튼 표기 */}
       {isLoading ? (
         <Loader />
       ) : (

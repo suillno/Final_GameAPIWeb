@@ -1,11 +1,11 @@
 import axios from "axios";
 
 export const instance = axios.create({
-  baseURL: process.env.REACT_APP_HOST,
+  baseURL: process.env.REACT_APP_API_HOST,
   timeout: 5000,
 });
 
-// ✅ 요청 보내기 직전에 URL 확인 (여기에 넣어주세요)
+// 요청 보내기 직전에 URL 확인 (여기에 넣어주세요)
 instance.interceptors.request.use(
   (config) => {
     const fullUrl = `${config.baseURL}${config.url}`;
