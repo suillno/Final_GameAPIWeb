@@ -59,11 +59,7 @@ export interface GameResult {
   parent_platforms: ParentPlatform[]; // 상위 플랫폼 분류 (PC, 콘솔 등)
   genres: Genre[]; // 장르 리스트
   stores: StoreWrapper[]; // 스토어 정보
-  clip?: {
-    clip: string;
-    video: string;
-    preview: string;
-  };
+  clip: null;
   tags: Tag[]; // 태그 리스트
   esrb_rating: ESRBRating; // ESRB 등급
   short_screenshots: Screenshot[]; // 스크린샷 리스트
@@ -104,7 +100,7 @@ export const defaultGameResult: GameResult = {
   parent_platforms: [],
   genres: [],
   stores: [],
-  clip: undefined,
+  clip: null,
   tags: [],
   esrb_rating: {
     id: 0,

@@ -97,6 +97,7 @@ const MainPage: React.FC = () => {
       .finally(() => setIsLoading(false));
   };
 
+  // 페이지 카운트 버튼 클릭시 자동실행
   useEffect(() => {
     getGameList(pageCount);
   }, [pageCount]);
@@ -139,7 +140,7 @@ const MainPage: React.FC = () => {
           </Link>
         ))}
       </MainContainer>
-
+      {/* 로딩중 로더스피너 실행, 완료시 더보기 버튼 표기 */}
       {isLoading ? (
         <Loader />
       ) : (
