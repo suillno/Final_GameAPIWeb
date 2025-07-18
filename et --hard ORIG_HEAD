@@ -1,0 +1,33 @@
+[33ma366238[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m 문서저장을위한 클리어
+[33mfa3cb4b[m Merge pull request #6 from suillno/dev.손준
+[33m61e238c[m Merge pull request #5 from suillno/dev.수일
+[33m7822633[m 깃 이그노어 업데이트
+[33mc56b6bf[m Merge branch 'main' of https://github.com/suillno/Final_GameAPIWeb
+[33m2fcbf9c[m db 설정 변경
+[33m00bd78b[m 111
+[33m88a241d[m 111
+[33mcdd0136[m Merge pull request #4 from suillno/dev.수일
+[33m14b7e25[m api 호출 수정
+[33m4736d48[m 스프링부트 및 리엑트 연동추가
+[33m395a261[m 흠
+[33m40f25b6[m 회원페이지 수정(임시)
+[33maf5a1e4[m 사용자 페이지
+[33m00a8c6b[m admin html 추가 수정예정
+[33m96c0469[m 반응형 동작 수정
+[33m59d6a4c[m 로딩동작, 사이드바 css
+[33m800e448[m 해더, 사이드바, 본문 반응형동작
+[33mafd9509[m 메인페이지 css 수정
+[33m0c51009[m 111
+[33m5ddb47d[m sideber css 수정
+[33me9694fb[m 타입스크립트 메인페이지 수정
+[33m6baac8c[m html, css 임시 작업
+[33m954ee6f[m 프로젝트 폴더정리
+[33m04d7809[m 게임html 테스트
+[33m14c3e39[m Merge pull request #3 from suillno/dev
+[33ma960392[m 공동테스트
+[33m0869318[m Merge pull request #2 from suillno/dev
+[33m8a1d04c[m Update .DS_Store
+[33m00b72d2[m Merge pull request #1 from suillno/dev
+[33m349b13a[m 기복테스트
+[33maaa065d[m 관리자 권한
+[33mfb0bd94[m 문서 정리
