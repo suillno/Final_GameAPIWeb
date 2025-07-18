@@ -1,0 +1,172 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36" version="28.0.1">
+  <diagram name="페이지-1" id="wQaHsm6zOsx-rH7gFwM3">
+    <mxGraphModel dx="1426" dy="743" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="wznz0KbHr3-qYTaw_UlS-137" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="wznz0KbHr3-qYTaw_UlS-145" target="wznz0KbHr3-qYTaw_UlS-150">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="189" y="280" as="sourcePoint" />
+            <mxPoint x="709" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wznz0KbHr3-qYTaw_UlS-138" value="" style="endArrow=block;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;dashed=1;endFill=0;" edge="1" parent="1" source="wznz0KbHr3-qYTaw_UlS-142" target="wznz0KbHr3-qYTaw_UlS-150">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="279" y="290" as="sourcePoint" />
+            <mxPoint x="564" y="410" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wznz0KbHr3-qYTaw_UlS-142" value="GameCartServiceImpl" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;container=0;" vertex="1" parent="1">
+          <mxGeometry x="534" y="260" width="320" height="88.06451612903226" as="geometry">
+            <mxRectangle x="100" y="80" width="140" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wznz0KbHr3-qYTaw_UlS-178" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="wznz0KbHr3-qYTaw_UlS-143" target="wznz0KbHr3-qYTaw_UlS-114">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="wznz0KbHr3-qYTaw_UlS-143" value="&lt;div&gt;+ saveGameLibrary(vo: GameCartVO): String&lt;/div&gt;&lt;div&gt;+ toggleGameCart(vo: GameCartVO): String&lt;/div&gt;&lt;div&gt;+ getCartByUser(userName: String): List&amp;lt;GameCartVO&amp;gt;&lt;/div&gt;&lt;div&gt;+ checkCart(gameId: Long, user: CustomUserDetails): boolean&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;container=0;" vertex="1" parent="1">
+          <mxGeometry x="534" y="343.87" width="320" height="76.13" as="geometry" />
+        </mxCell>
+        <mxCell id="wznz0KbHr3-qYTaw_UlS-162" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="wznz0KbHr3-qYTaw_UlS-144" target="wznz0KbHr3-qYTaw_UlS-159">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="wznz0KbHr3-qYTaw_UlS-144" value="-GameCartMapper:&amp;nbsp;gameCartMapper&amp;nbsp;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;container=0;" vertex="1" parent="1">
+          <mxGeometry x="534" y="290" width="320" height="58.06451612903226" as="geometry" />
+        </mxCell>
+        <mxCell id="wznz0KbHr3-qYTaw_UlS-148" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="529" y="55.370000000000005" width="330" height="164.63" as="geometry" />
+        </mxCell>
+        <mxCell id="wznz0KbHr3-qYTaw_UlS-149" value="&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&amp;nbsp;&lt;div&gt;GameCartService&lt;/div&gt;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;container=0;" vertex="1" parent="wznz0KbHr3-qYTaw_UlS-148">
+          <mxGeometry width="330" height="50" as="geometry">
+            <mxRectangle x="100" y="80" width="140" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wznz0KbHr3-qYTaw_UlS-150" value="&lt;div&gt;+ saveGameLibrary(vo: GameCartVO): String&lt;/div&gt;&lt;div&gt;+ toggleGameCart(vo: GameCartVO): String&lt;/div&gt;&lt;div&gt;+ getCartByUser(userName: String): List&amp;lt;GameCartVO&amp;gt;&lt;/div&gt;&lt;div&gt;+ checkCart(gameId: Long, user: CustomUserDetails): boolean&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;container=0;" vertex="1" parent="wznz0KbHr3-qYTaw_UlS-148">
+          <mxGeometry y="50" width="330" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="wznz0KbHr3-qYTaw_UlS-116" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="wznz0KbHr3-qYTaw_UlS-110" target="wznz0KbHr3-qYTaw_UlS-115">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-171" y="826" as="sourcePoint" />
+            <mxPoint x="409" y="560" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wznz0KbHr3-qYTaw_UlS-151" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="100" y="426" width="250" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="wznz0KbHr3-qYTaw_UlS-107" value="" style="group" vertex="1" connectable="0" parent="wznz0KbHr3-qYTaw_UlS-151">
+          <mxGeometry width="250" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="wznz0KbHr3-qYTaw_UlS-109" value="GameCartVO" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;container=0;" vertex="1" parent="wznz0KbHr3-qYTaw_UlS-107">
+          <mxGeometry x="10" y="-1.36" width="195.31" height="240" as="geometry">
+            <mxRectangle x="100" y="80" width="140" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wznz0KbHr3-qYTaw_UlS-110" value="&lt;div&gt;-String userName&lt;/div&gt;&lt;div&gt;-Long cartId&lt;/div&gt;&lt;div&gt;-Long gameId&lt;/div&gt;&lt;div&gt;-String title&lt;/div&gt;&lt;div&gt;-String backgroundImage&lt;/div&gt;&lt;div&gt;-int price&lt;/div&gt;&lt;div&gt;-int salePrice&lt;/div&gt;&lt;div&gt;-String released&lt;/div&gt;&lt;div&gt;-String esrbRating&lt;/div&gt;&lt;div&gt;-String cartType&lt;/div&gt;&lt;div&gt;-Timestamp createdAt&lt;/div&gt;&lt;div&gt;-int actionType&lt;/div&gt;&lt;div&gt;-boolean purchase&lt;/div&gt;&lt;div&gt;-String result&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;container=0;" vertex="1" parent="wznz0KbHr3-qYTaw_UlS-107">
+          <mxGeometry x="10" y="28.64" width="195.31" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="wznz0KbHr3-qYTaw_UlS-111" value="" style="rounded=0;whiteSpace=wrap;html=1;align=left;container=0;" vertex="1" parent="wznz0KbHr3-qYTaw_UlS-151">
+          <mxGeometry x="10" y="238.64" width="195.31" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="wznz0KbHr3-qYTaw_UlS-152" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="30" y="37" width="360" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="wznz0KbHr3-qYTaw_UlS-145" value="&lt;div&gt;+ cartSave(vo: GameCartVO): ResponseEntity&amp;lt;?&amp;gt;&lt;/div&gt;&lt;div&gt;+ checkCart(gameId: Long, user: CustomUserDetails): ResponseEntity&amp;lt;Boolean&amp;gt;&lt;/div&gt;&lt;div&gt;+ getCartListByUser(userName: String): ResponseEntity&amp;lt;?&amp;gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;container=0;" vertex="1" parent="wznz0KbHr3-qYTaw_UlS-152">
+          <mxGeometry y="88.06" width="360" height="81.94" as="geometry" />
+        </mxCell>
+        <mxCell id="wznz0KbHr3-qYTaw_UlS-146" value="GameCartController" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;container=0;" vertex="1" parent="wznz0KbHr3-qYTaw_UlS-152">
+          <mxGeometry width="360" height="88.06" as="geometry">
+            <mxRectangle x="100" y="80" width="140" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wznz0KbHr3-qYTaw_UlS-147" value="-GameCartService: gameCartService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;container=0;" vertex="1" parent="wznz0KbHr3-qYTaw_UlS-152">
+          <mxGeometry y="30" width="360" height="58.06" as="geometry" />
+        </mxCell>
+        <mxCell id="wznz0KbHr3-qYTaw_UlS-157" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="wznz0KbHr3-qYTaw_UlS-145" target="wznz0KbHr3-qYTaw_UlS-109">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="wznz0KbHr3-qYTaw_UlS-158" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="429" y="494" width="310" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="wznz0KbHr3-qYTaw_UlS-114" value="&lt;div&gt;&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;/div&gt;GameCartMapper" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;container=0;" vertex="1" parent="wznz0KbHr3-qYTaw_UlS-158">
+          <mxGeometry width="310" height="100" as="geometry">
+            <mxRectangle x="100" y="80" width="140" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wznz0KbHr3-qYTaw_UlS-115" value="&lt;div&gt;+String saveGameLibrary(GameCartVO vo)&lt;/div&gt;&lt;div&gt;+void toggleGameCart(GameCartVO vo)&lt;/div&gt;&lt;div&gt;+List~GameCartVO~ getCartByUser(String userName)&lt;/div&gt;&lt;div&gt;+int checkCart(GameCartVO vo)&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;container=0;" vertex="1" parent="wznz0KbHr3-qYTaw_UlS-158">
+          <mxGeometry y="28.639999999999986" width="310" height="71.36" as="geometry" />
+        </mxCell>
+        <mxCell id="wznz0KbHr3-qYTaw_UlS-112" value="" style="rounded=0;whiteSpace=wrap;html=1;align=left;container=0;" vertex="1" parent="wznz0KbHr3-qYTaw_UlS-158">
+          <mxGeometry y="100" width="310" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="wznz0KbHr3-qYTaw_UlS-161" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="970" y="270" width="260" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="wznz0KbHr3-qYTaw_UlS-159" value="CustomUserDetails" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;container=0;" vertex="1" parent="wznz0KbHr3-qYTaw_UlS-161">
+          <mxGeometry width="260" height="50" as="geometry">
+            <mxRectangle x="100" y="80" width="140" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wznz0KbHr3-qYTaw_UlS-160" value="&lt;div&gt;+Collection~GrantedAuthority~ getAuthorities()&lt;/div&gt;&lt;div&gt;+String getPassword()&lt;/div&gt;&lt;div&gt;+String getUsername()&lt;/div&gt;&lt;div&gt;+boolean isAccountNonExpired()&lt;/div&gt;&lt;div&gt;+boolean isAccountNonLocked()&lt;/div&gt;&lt;div&gt;+boolean isCredentialsNonExpired()&lt;/div&gt;&lt;div&gt;+boolean isEnabled()&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;container=0;" vertex="1" parent="wznz0KbHr3-qYTaw_UlS-161">
+          <mxGeometry y="50" width="260" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="wznz0KbHr3-qYTaw_UlS-163" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="800" y="490" width="260" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="wznz0KbHr3-qYTaw_UlS-164" value="User" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;container=0;" vertex="1" parent="wznz0KbHr3-qYTaw_UlS-163">
+          <mxGeometry width="260" height="50" as="geometry">
+            <mxRectangle x="100" y="80" width="140" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wznz0KbHr3-qYTaw_UlS-165" value="&lt;div&gt;+Long getId()&lt;/div&gt;&lt;div&gt;+String getUsername()&lt;/div&gt;&lt;div&gt;+String getPassword()&lt;/div&gt;&lt;div&gt;+boolean getActive()&lt;/div&gt;&lt;div&gt;+boolean getEmailVerified()&lt;/div&gt;&lt;div&gt;+List~Role~ getRoles()&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;container=0;" vertex="1" parent="wznz0KbHr3-qYTaw_UlS-163">
+          <mxGeometry y="50" width="260" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="wznz0KbHr3-qYTaw_UlS-169" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="970" y="50" width="260" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="wznz0KbHr3-qYTaw_UlS-172" value="" style="group" vertex="1" connectable="0" parent="wznz0KbHr3-qYTaw_UlS-169">
+          <mxGeometry x="271" y="440" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="wznz0KbHr3-qYTaw_UlS-170" value="SimpleGrantedAuthority&amp;nbsp;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;container=0;" vertex="1" parent="wznz0KbHr3-qYTaw_UlS-172">
+          <mxGeometry width="170" height="50" as="geometry">
+            <mxRectangle x="100" y="80" width="140" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wznz0KbHr3-qYTaw_UlS-171" value="+String getAuthority()" style="rounded=0;whiteSpace=wrap;html=1;align=left;container=0;" vertex="1" parent="wznz0KbHr3-qYTaw_UlS-172">
+          <mxGeometry y="50" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="wznz0KbHr3-qYTaw_UlS-173" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="wznz0KbHr3-qYTaw_UlS-160">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1330" y="491" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1100" y="460" />
+              <mxPoint x="1330" y="460" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wznz0KbHr3-qYTaw_UlS-174" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" target="wznz0KbHr3-qYTaw_UlS-167">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1100" y="430" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="1100" y="460" />
+              <mxPoint x="1155" y="460" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wznz0KbHr3-qYTaw_UlS-175" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=block;endFill=0;" edge="1" parent="1" source="wznz0KbHr3-qYTaw_UlS-160" target="wznz0KbHr3-qYTaw_UlS-164">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="wznz0KbHr3-qYTaw_UlS-177" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="1100" y="490" width="110" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="wznz0KbHr3-qYTaw_UlS-167" value="&lt;div&gt;&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;/div&gt;GrantedAuthority" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;container=0;" vertex="1" parent="wznz0KbHr3-qYTaw_UlS-177">
+          <mxGeometry width="110" height="50" as="geometry">
+            <mxRectangle x="100" y="80" width="140" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wznz0KbHr3-qYTaw_UlS-168" value="" style="rounded=0;whiteSpace=wrap;html=1;align=left;container=0;" vertex="1" parent="wznz0KbHr3-qYTaw_UlS-177">
+          <mxGeometry y="50" width="110" height="20" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

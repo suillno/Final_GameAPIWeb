@@ -1,0 +1,266 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36" version="28.0.4">
+  <diagram name="페이지-1" id="z0tpFgdjobZO5iEoDOsN">
+    <mxGraphModel dx="6531" dy="2972" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--9" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="-150" y="270" width="310" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--10" value="&lt;div&gt;&amp;nbsp; + list(String, String): ResponseEntity&amp;lt;?&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; + roleList(Long): ResponseEntity&amp;lt;?&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; + save(UserRegisterRequest): ResponseEntity&amp;lt;?&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; + voList(): ResponseEntity&amp;lt;List&amp;lt;UserVO&amp;gt;&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; + updateUserRole(UserRoleUpdateRequest): ResponseEntity&amp;lt;String&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; + toggleUserStatus(Long): ResponseEntity&amp;lt;String&amp;gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;container=0;" vertex="1" parent="7dQh9ZYbt5HYTAUpEIp--9">
+          <mxGeometry y="103.05473684210527" width="293.2432432432432" height="106.94526315789476" as="geometry" />
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--11" value="MemberController" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;container=0;" vertex="1" parent="7dQh9ZYbt5HYTAUpEIp--9">
+          <mxGeometry width="293.2432432432432" height="103.05473684210529" as="geometry">
+            <mxRectangle x="100" y="80" width="140" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--12" value="&amp;nbsp; - userService: UserService" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;container=0;" vertex="1" parent="7dQh9ZYbt5HYTAUpEIp--9">
+          <mxGeometry y="35.103157894736846" width="293.2432432432432" height="64.37052631578948" as="geometry" />
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--38" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="850" y="20" width="320" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--39" value="&lt;div&gt;&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;/div&gt;UserMapper" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;container=0;" vertex="1" parent="7dQh9ZYbt5HYTAUpEIp--38">
+          <mxGeometry width="320" height="60" as="geometry">
+            <mxRectangle x="100" y="80" width="140" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--40" value="&lt;div&gt;&amp;nbsp; + insertUser(User)&lt;/div&gt;&lt;div&gt;&amp;nbsp; + findAllUsers(): List&amp;lt;UserVO&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; + findRoleIdByName(String): Long&lt;/div&gt;&lt;div&gt;&amp;nbsp; + findCurrentRoleIdByUserId(Long): Long&lt;/div&gt;&lt;div&gt;&amp;nbsp; + updateUserRoleById(Long, Long): void&lt;/div&gt;&lt;div&gt;&amp;nbsp; + toggleUserStatus(Long): void&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;container=0;" vertex="1" parent="7dQh9ZYbt5HYTAUpEIp--38">
+          <mxGeometry y="60" width="320" height="113" as="geometry" />
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--46" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="331" y="340" width="339" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--7" value="UserService" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;container=0;" vertex="1" parent="7dQh9ZYbt5HYTAUpEIp--46">
+          <mxGeometry width="339" height="130" as="geometry">
+            <mxRectangle x="100" y="80" width="140" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--45" value="&lt;div&gt;&amp;nbsp; - passwordEncoder: PasswordEncoder&lt;/div&gt;&lt;div&gt;&amp;nbsp; - userRepository: UserRepository&lt;/div&gt;&lt;div&gt;&amp;nbsp; - roleService: RoleService&lt;/div&gt;&lt;div&gt;&amp;nbsp; - userDeviceService: UserDeviceService&lt;/div&gt;&lt;div&gt;&amp;nbsp; - refreshTokenService: RefreshTokenService&lt;/div&gt;&lt;div&gt;&amp;nbsp; - userMapper: UserMapper&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="7dQh9ZYbt5HYTAUpEIp--7">
+          <mxGeometry y="30" width="339" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--8" value="&lt;div&gt;&amp;nbsp; + userSearch(String, String): List&amp;lt;UserResponse&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; + roleSearch(Long): Set&amp;lt;Role&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; + saveUser(UserRegisterRequest): boolean&lt;/div&gt;&lt;div&gt;&amp;nbsp; + toggleUserStatus(Long): void&lt;/div&gt;&lt;div&gt;&amp;nbsp; + updateUserRole(Long, String): void&lt;/div&gt;&lt;div&gt;&amp;nbsp; + getAllUsersByMapper(): List&amp;lt;UserVO&amp;gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;container=0;" vertex="1" parent="7dQh9ZYbt5HYTAUpEIp--46">
+          <mxGeometry y="130" width="339" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--47" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="850" y="230" width="310" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--20" value="&lt;div&gt;&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;/div&gt;UserRepository&amp;nbsp;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;container=0;" vertex="1" parent="7dQh9ZYbt5HYTAUpEIp--47">
+          <mxGeometry width="310" height="50" as="geometry">
+            <mxRectangle x="100" y="80" width="140" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--21" value="&lt;div&gt;&amp;nbsp; + findByUsername(username: String): Optional&amp;lt;User&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; + findByEmail(email: String): Optional&amp;lt;User&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; + existsByUsername(username: String): Boolean&lt;/div&gt;&lt;div&gt;&amp;nbsp; + existsByEmail(email: String): Boolean&lt;/div&gt;&lt;div&gt;&amp;nbsp; + findAll(): List&amp;lt;User&amp;gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;container=0;" vertex="1" parent="7dQh9ZYbt5HYTAUpEIp--47">
+          <mxGeometry y="50" width="310" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--48" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="1690" y="350" width="140" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--49" value="&lt;div&gt;&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;/div&gt;UserRepository&amp;nbsp;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;container=0;" vertex="1" parent="7dQh9ZYbt5HYTAUpEIp--48">
+          <mxGeometry width="140" height="50" as="geometry">
+            <mxRectangle x="100" y="80" width="140" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--50" value="&amp;nbsp; + findAll(): List&amp;lt;Role&amp;gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;container=0;" vertex="1" parent="7dQh9ZYbt5HYTAUpEIp--48">
+          <mxGeometry y="50" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--52" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="850" y="850" width="190" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--17" value="RoleService" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;container=0;" vertex="1" parent="7dQh9ZYbt5HYTAUpEIp--52">
+          <mxGeometry width="190" height="90" as="geometry">
+            <mxRectangle x="100" y="80" width="140" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--51" value="&amp;nbsp; - roleRepository: RoleRepository" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="7dQh9ZYbt5HYTAUpEIp--17">
+          <mxGeometry y="30" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--112" value="&amp;nbsp; - roleRepository: RoleRepository" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="7dQh9ZYbt5HYTAUpEIp--17">
+          <mxGeometry y="60" width="190" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--18" value="&amp;nbsp; + findAll(): Collection&amp;lt;Role&amp;gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;container=0;" vertex="1" parent="7dQh9ZYbt5HYTAUpEIp--52">
+          <mxGeometry y="60" width="190" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--58" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="1690" y="760" width="310" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--59" value="&lt;div&gt;&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;/div&gt;UserDeviceRepository" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;container=0;" vertex="1" parent="7dQh9ZYbt5HYTAUpEIp--58">
+          <mxGeometry width="310" height="50" as="geometry">
+            <mxRectangle x="100" y="80" width="140" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--60" value="&lt;div&gt;&amp;nbsp; + findByUserId(userId: Long): Optional&amp;lt;UserDevice&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; + findAllByUserId(userId: Long): List&amp;lt;UserDevice&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; + findByUserIdAndDeviceId(userId: Long, deviceId: String): Optional&amp;lt;UserDevice&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; + findByRefreshToken(token: RefreshToken): Optional&amp;lt;UserDevice&amp;gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;container=0;" vertex="1" parent="7dQh9ZYbt5HYTAUpEIp--58">
+          <mxGeometry y="50" width="310" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--70" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="850" y="400" width="310" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--68" value="&lt;div&gt;&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;/div&gt;RefreshTokenRepository" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;container=0;" vertex="1" parent="7dQh9ZYbt5HYTAUpEIp--70">
+          <mxGeometry width="310" height="50" as="geometry">
+            <mxRectangle x="100" y="80" width="140" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--69" value="&lt;div&gt;&amp;nbsp; + findByToken(token: String): Optional&amp;lt;RefreshToken&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; + findById(id: Long): Optional&amp;lt;RefreshToken&amp;gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;container=0;" vertex="1" parent="7dQh9ZYbt5HYTAUpEIp--70">
+          <mxGeometry y="50" width="310" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--74" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="850" y="660" width="310" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--75" value="PasswordEncoder" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;container=0;" vertex="1" parent="7dQh9ZYbt5HYTAUpEIp--74">
+          <mxGeometry width="310" height="50" as="geometry">
+            <mxRectangle x="100" y="80" width="140" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--76" value="&lt;div&gt;&amp;nbsp; + encode(rawPassword: CharSequence): String&lt;/div&gt;&lt;div&gt;&amp;nbsp; + matches(rawPassword: CharSequence, encodedPassword: String): boolean&lt;/div&gt;&lt;div&gt;&amp;nbsp; + upgradeEncoding(encodedPassword: String): boolean&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;container=0;" vertex="1" parent="7dQh9ZYbt5HYTAUpEIp--74">
+          <mxGeometry y="50" width="310" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--86" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="-250" y="660" width="195.31" height="204.32000000000005" as="geometry" />
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--34" value="UserRegisterRequest" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;container=0;" vertex="1" parent="7dQh9ZYbt5HYTAUpEIp--86">
+          <mxGeometry width="195.31" height="54.32" as="geometry">
+            <mxRectangle x="100" y="80" width="140" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--36" value="&lt;div&gt;&amp;nbsp; + id: Long&lt;/div&gt;&lt;div&gt;&amp;nbsp; + username: String&lt;/div&gt;&lt;div&gt;&amp;nbsp; + email: String&lt;/div&gt;&lt;div&gt;&amp;nbsp; + password: String&lt;/div&gt;&lt;div&gt;&amp;nbsp; + passwordConfirm: String&lt;/div&gt;&lt;div&gt;&amp;nbsp; + name: String&lt;/div&gt;&lt;div&gt;&amp;nbsp; + roleNum: String&lt;/div&gt;&lt;div&gt;&amp;nbsp; + active: boolean&lt;/div&gt;&lt;div&gt;&amp;nbsp; + birth: String&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;container=0;" vertex="1" parent="7dQh9ZYbt5HYTAUpEIp--86">
+          <mxGeometry y="54.32000000000005" width="195.31" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--89" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="10" y="660" width="540" height="550" as="geometry" />
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--87" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="7dQh9ZYbt5HYTAUpEIp--89">
+          <mxGeometry width="540" height="550" as="geometry" />
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--22" value="" style="group" vertex="1" connectable="0" parent="7dQh9ZYbt5HYTAUpEIp--89">
+          <mxGeometry x="250" y="330.0000000000001" width="270" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--23" value="CustomUserDetails&amp;nbsp;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;container=0;" vertex="1" parent="7dQh9ZYbt5HYTAUpEIp--22">
+          <mxGeometry width="270" height="60" as="geometry">
+            <mxRectangle x="100" y="80" width="140" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--25" value="&lt;div&gt;&amp;nbsp; + getAuthorities(): Collection&amp;lt;GrantedAuthority&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; + getPassword(): String&lt;/div&gt;&lt;div&gt;&amp;nbsp; + getUsername(): String&lt;/div&gt;&lt;div&gt;&amp;nbsp; + isAccountNonExpired(): boolean&lt;/div&gt;&lt;div&gt;&amp;nbsp; + isAccountNonLocked(): boolean&lt;/div&gt;&lt;div&gt;&amp;nbsp; + isCredentialsNonExpired(): boolean&lt;/div&gt;&lt;div&gt;&amp;nbsp; + isEnabled(): boolean&lt;/div&gt;&lt;div&gt;&amp;nbsp; + equals(obj: Object): boolean&lt;/div&gt;&lt;div&gt;&amp;nbsp; + hashCode(): int&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;container=0;" vertex="1" parent="7dQh9ZYbt5HYTAUpEIp--22">
+          <mxGeometry y="60" width="270" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--30" value="" style="group" vertex="1" connectable="0" parent="7dQh9ZYbt5HYTAUpEIp--89">
+          <mxGeometry x="20" y="80" width="200" height="380" as="geometry" />
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--31" value="User" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;container=0;" vertex="1" parent="7dQh9ZYbt5HYTAUpEIp--30">
+          <mxGeometry width="200" height="171.36" as="geometry">
+            <mxRectangle x="100" y="80" width="140" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--32" value="&lt;div&gt;&amp;nbsp; - Long id&lt;/div&gt;&lt;div&gt;&amp;nbsp; - String email&lt;/div&gt;&lt;div&gt;&amp;nbsp; - String username&lt;/div&gt;&lt;div&gt;&amp;nbsp; - String password&lt;/div&gt;&lt;div&gt;&amp;nbsp; - String name&lt;/div&gt;&lt;div&gt;&amp;nbsp; - String birth&lt;/div&gt;&lt;div&gt;&amp;nbsp; - Boolean active&lt;/div&gt;&lt;div&gt;&amp;nbsp; - Boolean isEmailVerified&lt;/div&gt;&lt;div&gt;&amp;nbsp; - Set&amp;lt;Role&amp;gt; roles&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;container=0;" vertex="1" parent="7dQh9ZYbt5HYTAUpEIp--30">
+          <mxGeometry y="30" width="190" height="141.36" as="geometry" />
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--33" value="&lt;div&gt;&amp;nbsp; + addRole(role: Role): void&lt;/div&gt;&lt;div&gt;&amp;nbsp; + addRoles(roles: Set&amp;lt;Role&amp;gt;): void&lt;/div&gt;&lt;div&gt;&amp;nbsp; + removeRole(role: Role): void&lt;/div&gt;&lt;div&gt;&amp;nbsp; + markVerificationConfirmed(): void&lt;/div&gt;&lt;div&gt;&amp;nbsp; + getId(): Long&lt;/div&gt;&lt;div&gt;&amp;nbsp; + getUsername(): String&lt;/div&gt;&lt;div&gt;&amp;nbsp; + getPassword(): String&lt;/div&gt;&lt;div&gt;&amp;nbsp; + getName(): String&lt;/div&gt;&lt;div&gt;&amp;nbsp; + getEmail(): String&lt;/div&gt;&lt;div&gt;&amp;nbsp; + getBirth(): String&lt;/div&gt;&lt;div&gt;&amp;nbsp; + getActive(): Boolean&lt;/div&gt;&lt;div&gt;&amp;nbsp; + getEmailVerified(): Boolean&lt;/div&gt;&lt;div&gt;&amp;nbsp; + getRoles(): Set&amp;lt;Role&amp;gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;container=0;" vertex="1" parent="7dQh9ZYbt5HYTAUpEIp--30">
+          <mxGeometry y="171.36" width="200" height="208.64" as="geometry" />
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--77" value="" style="group" vertex="1" connectable="0" parent="7dQh9ZYbt5HYTAUpEIp--89">
+          <mxGeometry x="250" y="14.319999999999993" width="195.31" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--72" value="UserResponse" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;container=0;" vertex="1" parent="7dQh9ZYbt5HYTAUpEIp--77">
+          <mxGeometry width="195.31" height="54.32" as="geometry">
+            <mxRectangle x="100" y="80" width="140" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--73" value="&lt;div&gt;&amp;nbsp; + email: String&lt;/div&gt;&lt;div&gt;&amp;nbsp; + username: String&lt;/div&gt;&lt;div&gt;&amp;nbsp; + roles: Set&amp;lt;Role&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; + id: Long&lt;/div&gt;&lt;div&gt;&amp;nbsp; + active: boolean&lt;/div&gt;&lt;div&gt;&amp;nbsp; + name: String&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;container=0;" vertex="1" parent="7dQh9ZYbt5HYTAUpEIp--77">
+          <mxGeometry y="54.32000000000005" width="195.31" height="105.68" as="geometry" />
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--81" value="" style="group" vertex="1" connectable="0" parent="7dQh9ZYbt5HYTAUpEIp--89">
+          <mxGeometry x="250" y="200" width="195.31" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--79" value="Role" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;container=0;" vertex="1" parent="7dQh9ZYbt5HYTAUpEIp--81">
+          <mxGeometry width="195.31" height="54.32" as="geometry">
+            <mxRectangle x="100" y="80" width="140" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--80" value="&lt;div&gt;&amp;nbsp; + id: Long&lt;/div&gt;&lt;div&gt;&amp;nbsp; + role: RoleName&lt;/div&gt;&lt;div&gt;&amp;nbsp; + userList: Set&amp;lt;User&amp;gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;container=0;" vertex="1" parent="7dQh9ZYbt5HYTAUpEIp--81">
+          <mxGeometry y="54.32000000000005" width="195.31" height="55.68" as="geometry" />
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--88" value="VO 모음" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="7dQh9ZYbt5HYTAUpEIp--89">
+          <mxGeometry width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--98" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="1241" y="800" width="291" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--63" value="RefreshTokenService" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;container=0;" vertex="1" parent="7dQh9ZYbt5HYTAUpEIp--98">
+          <mxGeometry width="291" height="60" as="geometry">
+            <mxRectangle x="100" y="80" width="140" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--65" value="&lt;div&gt;&amp;nbsp; + findByToken(token: String): Optional&amp;lt;RefreshToken&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; + createRefreshToken(): RefreshToken&lt;/div&gt;&lt;div&gt;&amp;nbsp; + verifyExpiration(token: RefreshToken): void&lt;/div&gt;&lt;div&gt;&amp;nbsp; + deleteById(id: Long): void&lt;/div&gt;&lt;div&gt;&amp;nbsp; + increaseCount(token: RefreshToken): void&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;container=0;" vertex="1" parent="7dQh9ZYbt5HYTAUpEIp--98">
+          <mxGeometry y="60" width="291" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--64" value="&amp;nbsp; - refreshTokenRepository: RefreshTokenRepository" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;container=0;" vertex="1" parent="7dQh9ZYbt5HYTAUpEIp--98">
+          <mxGeometry y="30" width="291" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--104" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.25;entryDx=0;entryDy=0;elbow=vertical;dashed=1;" edge="1" parent="1" source="7dQh9ZYbt5HYTAUpEIp--49" target="7dQh9ZYbt5HYTAUpEIp--55">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--105" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.25;entryDx=0;entryDy=0;elbow=vertical;dashed=1;" edge="1" parent="1" source="7dQh9ZYbt5HYTAUpEIp--60" target="7dQh9ZYbt5HYTAUpEIp--55">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--106" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;elbow=vertical;" edge="1" parent="1" source="7dQh9ZYbt5HYTAUpEIp--55" target="7dQh9ZYbt5HYTAUpEIp--63">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--111" value="" style="endArrow=classic;html=1;rounded=0;elbow=vertical;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.825;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="7dQh9ZYbt5HYTAUpEIp--10" target="7dQh9ZYbt5HYTAUpEIp--45">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="270" y="440" as="sourcePoint" />
+            <mxPoint x="320" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--118" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;elbow=vertical;strokeWidth=2;" edge="1" parent="1" source="7dQh9ZYbt5HYTAUpEIp--115" target="7dQh9ZYbt5HYTAUpEIp--40">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--115" value="" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.annotation_2;align=left;labelPosition=right;pointerEvents=1;" vertex="1" parent="1">
+          <mxGeometry x="670" y="110" width="40" height="780" as="geometry" />
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--119" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;elbow=vertical;strokeWidth=2;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="710" y="890" as="sourcePoint" />
+            <mxPoint x="850" y="888" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--122" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0;entryDx=0;entryDy=0;elbow=vertical;strokeWidth=2;" edge="1" parent="1" source="7dQh9ZYbt5HYTAUpEIp--120" target="7dQh9ZYbt5HYTAUpEIp--69">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--120" value="" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.annotation_1;align=left;pointerEvents=1;" vertex="1" parent="1">
+          <mxGeometry x="690" y="290" width="90" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--121" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;elbow=vertical;strokeWidth=2;" edge="1" parent="1" source="7dQh9ZYbt5HYTAUpEIp--120">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="850" y="289" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--125" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;entryX=-0.011;entryY=0.735;entryDx=0;entryDy=0;elbow=vertical;entryPerimeter=0;strokeWidth=2;" edge="1" parent="1" source="7dQh9ZYbt5HYTAUpEIp--123" target="7dQh9ZYbt5HYTAUpEIp--56">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--123" value="" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.annotation_1;align=left;pointerEvents=1;" vertex="1" parent="1">
+          <mxGeometry x="690" y="590" width="50" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--124" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=-0.001;entryY=0.139;entryDx=0;entryDy=0;entryPerimeter=0;elbow=vertical;strokeWidth=2;" edge="1" parent="1" source="7dQh9ZYbt5HYTAUpEIp--123" target="7dQh9ZYbt5HYTAUpEIp--76">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--54" value="UserDeviceService" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;container=0;" vertex="1" parent="1">
+          <mxGeometry x="1240" y="530" width="291" height="70" as="geometry">
+            <mxRectangle x="100" y="80" width="140" height="30" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--56" value="&lt;div&gt;&amp;nbsp; - userDeviceRepository: UserDeviceRepository&lt;/div&gt;&lt;div&gt;&amp;nbsp; - refreshTokenService: RefreshTokenService&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="7dQh9ZYbt5HYTAUpEIp--54">
+          <mxGeometry y="30" width="291" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--55" value="&lt;div&gt;&amp;nbsp; + findByUserId(userId: Long): Optional&amp;lt;UserDevice&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; + findByUserIdAndDeviceId(userId: Long, deviceId: String): Optional&amp;lt;UserDevice&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; + findAllByUserId(userId: Long): List&amp;lt;UserDevice&amp;gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; + createUserDevice(info: DeviceInfo): UserDevice&lt;/div&gt;&lt;div&gt;&amp;nbsp; + verifyRefreshAvailability(token: RefreshToken): void&lt;/div&gt;&lt;div&gt;&amp;nbsp; + save(userDevice: UserDevice): void&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;container=0;" vertex="1" parent="1">
+          <mxGeometry x="1240" y="600" width="291" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--126" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;elbow=vertical;" edge="1" parent="1" source="7dQh9ZYbt5HYTAUpEIp--8" target="7dQh9ZYbt5HYTAUpEIp--87">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7dQh9ZYbt5HYTAUpEIp--127" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;elbow=vertical;" edge="1" parent="1" source="7dQh9ZYbt5HYTAUpEIp--34" target="7dQh9ZYbt5HYTAUpEIp--10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
