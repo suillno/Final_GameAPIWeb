@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.20eb7915.css",
+    "main.js": "/static/js/main.c35b092a.js",
+    "static/js/453.be7b80d0.chunk.js": "/static/js/453.be7b80d0.chunk.js",
+    "static/media/g1.jpg": "/static/media/g1.8b3837a5a2e399da9dc2.jpg",
+    "static/media/g3.jpg": "/static/media/g3.26dbaf7a409c8e443107.jpg",
+    "static/media/g2.jpg": "/static/media/g2.702f1ff7f49092db413c.jpg",
+    "static/media/DiscountEvent.png": "/static/media/DiscountEvent.20f2f5df529b3bbe49dc.png",
+    "static/media/mainBanner.png": "/static/media/mainBanner.39b19593b77b9b1674af.png",
+    "static/media/PGLogoContents.png": "/static/media/PGLogoContents.814f0417fd769f1c71f7.png",
+    "static/media/slick.svg": "/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/index.html",
+    "static/media/SearchIcon.svg": "/static/media/SearchIcon.93cd779ceed9702b011d9bf9d8fb1baf.svg",
+    "main.20eb7915.css.map": "/static/css/main.20eb7915.css.map",
+    "main.c35b092a.js.map": "/static/js/main.c35b092a.js.map",
+    "453.be7b80d0.chunk.js.map": "/static/js/453.be7b80d0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.20eb7915.css",
+    "static/js/main.c35b092a.js"
+  ]
+}
