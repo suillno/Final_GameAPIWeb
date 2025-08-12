@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="Form_Top" width="800" height="50" titletext="Form_Top">
+    <Layouts>
+      <Layout width="800" height="50" screenid="Desktop_screen">
+        <Div id="Div00" taborder="0" text="Div00" left="24" top="12" width="746" height="32" background="#1155AA">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" text="Main menu1" left="33" top="9" width="120" height="19" color="#ffffff"/>
+              <Static id="Static00_00" taborder="1" text="Main menu2" left="146" top="9" width="120" height="19" color="#ffffff"/>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+  </Form>
+</FDL>
