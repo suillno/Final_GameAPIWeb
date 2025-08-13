@@ -1,0 +1,511 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="Form_Emp" width="800" height="718" titletext="Form_Emp">
+    <Layouts>
+      <Layout width="800" height="718" screenid="Desktop_screen">
+        <Div id="div_search" taborder="0" text="Div00" left="10" top="46" width="780" height="45" border="1px solid #9c9c9c">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" text="Department" left="9" top="9" width="70" height="24"/>
+              <Edit id="edt_dept_cd" taborder="1" left="92" top="8" width="55" height="25"/>
+              <Edit id="edt_dept_nm" taborder="2" left="152" top="8" width="145" height="25"/>
+              <Button id="btn_dept" taborder="3" text="Find" left="304" top="8" width="45" height="25" onclick="div_search_btn_dept_onclick"/>
+              <Static id="Static00_00" taborder="4" text="Gender" left="379" top="8" width="70" height="24"/>
+              <Button id="btn_reset" taborder="5" text="reset" left="724" top="8" width="45" height="25" onclick="div_search_btn_reset_onclick"/>
+              <Radio id="rdo_gender" taborder="6" left="431" top="5" width="154" height="32" innerdataset="innerdataset" codecolumn="codecolumn" datacolumn="datacolumn" fittocontents="none" columncount="3" canitemchange="div_search_rdo_gender_canitemchange">
+                <Dataset id="innerdataset">
+                  <ColumnInfo>
+                    <Column id="codecolumn" size="256"/>
+                    <Column id="datacolumn" size="256"/>
+                  </ColumnInfo>
+                  <Rows>
+                    <Row>
+                      <Col id="codecolumn">A</Col>
+                      <Col id="datacolumn">All</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">M</Col>
+                      <Col id="datacolumn">Male</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">W</Col>
+                      <Col id="datacolumn">Femle</Col>
+                    </Row>
+                  </Rows>
+                </Dataset>
+              </Radio>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Div id="div_detail" taborder="1" text="Div01" left="403" top="96" width="387" height="590" border="1px solid #9c9c9c">
+          <Layouts>
+            <Layout>
+              <Static id="Static00" taborder="0" text="Name" left="15" top="20" width="50" height="20"/>
+              <Static id="Static00_00" taborder="1" text="Emp ID" left="15" top="50" width="50" height="20"/>
+              <Static id="Static00_00_00" taborder="2" text="Department" left="15" top="80" width="80" height="20"/>
+              <MaskEdit id="mak_id" taborder="3" left="100" top="50" width="85" height="20" onchanged="div_detail_MaskEdit00_onchanged" format="AA-###" type="string"/>
+              <Combo id="cbo_dept" taborder="4" text="Combo00" left="100" top="80" width="150" height="20" innerdataset="ds_dept"/>
+              <Static id="Static00_00_00_00" taborder="5" text="Position" left="15" top="137" width="80" height="20"/>
+              <ListBox id="lst_pos" taborder="6" left="100" top="110" width="165" height="90" innerdataset="ds_pos" codecolumn="POS_CD" datacolumn="POS_NAME"/>
+              <Static id="Static00_00_00_00_00" taborder="7" text="Gender" left="15" top="210" width="80" height="20"/>
+              <Radio id="rdo_gender" taborder="8" left="100" top="210" width="165" height="20" innerdataset="innerdataset" codecolumn="codecolumn" datacolumn="datacolumn" direction="vertical">
+                <Dataset id="innerdataset">
+                  <ColumnInfo>
+                    <Column id="codecolumn" size="256"/>
+                    <Column id="datacolumn" size="256"/>
+                  </ColumnInfo>
+                  <Rows>
+                    <Row>
+                      <Col id="codecolumn">M</Col>
+                      <Col id="datacolumn">Male</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">W</Col>
+                      <Col id="datacolumn">Female</Col>
+                    </Row>
+                  </Rows>
+                </Dataset>
+              </Radio>
+              <CheckBox id="chk_married" taborder="9" left="100" top="240" width="20" height="20"/>
+              <Static id="Static00_00_00_00_00_00" taborder="10" text="Married" left="15" top="240" width="80" height="20"/>
+              <Static id="Static00_00_00_00_00_00_00" taborder="11" text="Hire Date" left="15" top="270" width="80" height="20"/>
+              <Calendar id="cal_date" taborder="12" left="100" top="270" width="150" height="20"/>
+              <MaskEdit id="msk_salary" taborder="13" left="100" top="300" width="120" height="20" format="#,###"/>
+              <Static id="Static00_00_00_00_00_00_00_00" taborder="14" text="Annual Salary" left="15" top="300" width="80" height="20"/>
+              <Static id="Static00_00_00_00_00_00_00_00_00" taborder="15" text="Memo" left="15" top="370" width="80" height="20"/>
+              <TextArea id="txt_memo" taborder="16" left="100" top="330" width="190" height="120"/>
+              <Edit id="edt_name" taborder="17" left="100" top="20" width="150" height="20"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Static id="st_title" taborder="2" text="Employees" left="10" top="9" width="120" height="31" font="bold 18px/normal &quot;Malgun Gothic&quot;"/>
+        <Button id="btn_save" taborder="3" text="Save" left="730" top="5" width="60" height="35"/>
+        <Button id="btn_del" taborder="4" text="Delete" left="665" top="5" width="60" height="35"/>
+        <Button id="btn_add" taborder="5" text="Add" left="600" top="5" width="60" height="35"/>
+        <Button id="btn_retrive" taborder="6" text="Retrive" left="469" top="5" width="60" height="35"/>
+        <Grid id="grd_list" taborder="7" left="10" top="96" width="387" height="590" binddataset="ds_emp" oncellclick="grid_list_oncellclick">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="48"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+                <Row size="24" band="summ"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="NO"/>
+                <Cell col="1" text="EMPL_ID"/>
+                <Cell col="2" text="FULL_NAME"/>
+                <Cell col="3" text="DEPT_CD"/>
+                <Cell col="4" text="POS_CD"/>
+                <Cell col="5" text="HIRE_DATE"/>
+                <Cell col="6" text="SALARY"/>
+                <Cell col="7" text="GENDER"/>
+                <Cell col="8" text="MARRIED"/>
+                <Cell col="9" text="MEMO"/>
+              </Band>
+              <Band id="body">
+                <Cell text="expr:currow+1"/>
+                <Cell col="1" text="bind:EMPL_ID" displaytype="mask" edittype="mask" maskeditformat="AA-###" maskedittype="string"/>
+                <Cell col="2" text="bind:FULL_NAME" displaytype="text" edittype="text"/>
+                <Cell col="3" text="bind:DEPT_CD" displaytype="combotext" edittype="combo" combodataset="ds_dept" combocodecol="DEPT_CD" combodatacol="DEPT_NAME"/>
+                <Cell col="4" text="bind:POS_CD" displaytype="combocontrol" edittype="combo" combodataset="ds_pos" combodatacol="POS_NAME" combocodecol="POS_CD"/>
+                <Cell col="5" text="bind:HIRE_DATE" displaytype="date" edittype="date"/>
+                <Cell col="6" text="bind:SALARY" displaytype="number" edittype="mask" maskeditformat="#.###"/>
+                <Cell col="7" text="expr:GENDER === &quot;M&quot; ? &quot;Male&quot; : &quot;Female&quot;"/>
+                <Cell col="8" text="bind:MARRIED" displaytype="checkboxcontrol" edittype="checkbox"/>
+                <Cell col="9" text="bind:MEMO" displaytype="text" edittype="textarea"/>
+              </Band>
+              <Band id="summary">
+                <Cell/>
+                <Cell col="1" text="expr:&quot;total : &quot; + comp.parent.ds_emp.getRowCount()"/>
+                <Cell col="2"/>
+                <Cell col="3"/>
+                <Cell col="4"/>
+                <Cell col="5"/>
+                <Cell col="6" text="expr:dataset.getSum('SALARY')"/>
+                <Cell col="7"/>
+                <Cell col="8"/>
+                <Cell col="9"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Button id="btn_dbopen" taborder="8" text="open" left="535" top="6" width="59" height="34" onclick="btn_dbopen_onclick"/>
+        <Edit id="edt_dbfile" taborder="9" left="120" top="7" width="325" height="29" value="C:\sqlite\nexacro_sample_db.sqlite" text="C:\sqlite\nexacro_sample_db.sqlite"/>
+      </Layout>
+      <Layout name="App_Desktop_MDI" width="1080" height="718" screenid="App_Desktop_MDI"/>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_emp">
+        <ColumnInfo>
+          <Column id="EMPL_ID" type="STRING" size="10"/>
+          <Column id="FULL_NAME" type="STRING" size="50"/>
+          <Column id="DEPT_CD" type="STRING" size="10"/>
+          <Column id="POS_CD" type="STRING" size="10"/>
+          <Column id="HIRE_DATE" type="DATE" size="10"/>
+          <Column id="SALARY" type="INT" size="10"/>
+          <Column id="GENDER" type="STRING" size="10"/>
+          <Column id="MARRIED" type="STRING" size="10"/>
+          <Column id="MEMO" type="STRING" size="10"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="EMPL_ID">AA001</Col>
+            <Col id="FULL_NAME">Olivia</Col>
+            <Col id="DEPT_CD">01</Col>
+            <Col id="POS_CD">02</Col>
+            <Col id="HIRE_DATE">20101003</Col>
+            <Col id="SALARY">83000</Col>
+            <Col id="GENDER">W</Col>
+            <Col id="MARRIED">True</Col>
+            <Col id="MEMO">ivory</Col>
+          </Row>
+          <Row>
+            <Col id="EMPL_ID">AA002</Col>
+            <Col id="FULL_NAME">John</Col>
+            <Col id="DEPT_CD">02</Col>
+            <Col id="POS_CD">02</Col>
+            <Col id="HIRE_DATE">20050111</Col>
+            <Col id="SALARY">76000</Col>
+            <Col id="GENDER">M</Col>
+            <Col id="MARRIED">False</Col>
+            <Col id="MEMO">greenyellow</Col>
+          </Row>
+          <Row>
+            <Col id="EMPL_ID">BB001</Col>
+            <Col id="FULL_NAME">Jackson</Col>
+            <Col id="DEPT_CD">02</Col>
+            <Col id="POS_CD">03</Col>
+            <Col id="HIRE_DATE">20070206</Col>
+            <Col id="SALARY">95000</Col>
+            <Col id="GENDER">M</Col>
+            <Col id="MARRIED">True</Col>
+            <Col id="MEMO">aliceblue</Col>
+          </Row>
+          <Row>
+            <Col id="EMPL_ID">BB002</Col>
+            <Col id="FULL_NAME">Maia</Col>
+            <Col id="DEPT_CD">04</Col>
+            <Col id="POS_CD">01</Col>
+            <Col id="HIRE_DATE">20090512</Col>
+            <Col id="SALARY">60000</Col>
+            <Col id="GENDER">W</Col>
+            <Col id="MARRIED">False</Col>
+            <Col id="MEMO">ivory</Col>
+          </Row>
+          <Row>
+            <Col id="EMPL_ID">CC001</Col>
+            <Col id="FULL_NAME">Adam</Col>
+            <Col id="DEPT_CD">04</Col>
+            <Col id="POS_CD">04</Col>
+            <Col id="HIRE_DATE">20010109</Col>
+            <Col id="SALARY">88000</Col>
+            <Col id="GENDER">M</Col>
+            <Col id="MARRIED">True</Col>
+            <Col id="MEMO">greenyellow</Col>
+          </Row>
+          <Row>
+            <Col id="EMPL_ID">DD001</Col>
+            <Col id="FULL_NAME">Tyler</Col>
+            <Col id="DEPT_CD">04</Col>
+            <Col id="POS_CD">03</Col>
+            <Col id="HIRE_DATE">20060907</Col>
+            <Col id="SALARY">60000</Col>
+            <Col id="GENDER">M</Col>
+            <Col id="MARRIED">False</Col>
+            <Col id="MEMO">lightgray</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_dept">
+        <ColumnInfo>
+          <Column id="DEPT_CD" type="STRING" size="32"/>
+          <Column id="DEPT_NAME" type="STRING" size="32"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="DEPT_CD">01</Col>
+            <Col id="DEPT_NAME">Accounting Team</Col>
+          </Row>
+          <Row>
+            <Col id="DEPT_CD">02</Col>
+            <Col id="DEPT_NAME">HR Team</Col>
+          </Row>
+          <Row>
+            <Col id="DEPT_CD">03</Col>
+            <Col id="DEPT_NAME">Sales Team</Col>
+          </Row>
+          <Row>
+            <Col id="DEPT_CD">04</Col>
+            <Col id="DEPT_NAME">Design Team</Col>
+          </Row>
+          <Row>
+            <Col id="DEPT_CD">05</Col>
+            <Col id="DEPT_NAME">Education Team</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_pos">
+        <ColumnInfo>
+          <Column id="POS_CD" type="STRING" size="32"/>
+          <Column id="POS_NAME" type="STRING" size="32"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="POS_CD">04</Col>
+            <Col id="POS_NAME">Officer</Col>
+          </Row>
+          <Row>
+            <Col id="POS_CD">03</Col>
+            <Col id="POS_NAME">Assistant Manager</Col>
+          </Row>
+          <Row>
+            <Col id="POS_CD">02</Col>
+            <Col id="POS_NAME">Division Manager</Col>
+          </Row>
+          <Row>
+            <Col id="POS_CD">01</Col>
+            <Col id="POS_NAME">Chairman</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <LiteDBConnection id="LiteDBConnection00" onerror="LiteDBConnection00_onerror" onsuccess="LiteDBConnection00_onsuccess"/>
+      <LiteDBStatement id="LiteDBStatement00" onerror="LiteDBStatement00_onerror" onsuccess="LiteDBStatement00_onsuccess"/>
+    </Objects>
+    <Script type="xscript5.1"><![CDATA[// 변경 감지: 상세 영역 MaskEdit 값 변경 시 (현재 로직 없음, 필요 시 입력 검증/포맷 적용 지점)
+this.div_detail_MaskEdit00_onchanged = function(obj:nexacro.MaskEdit,e:nexacro.ChangeEventInfo)
+{
+	
+};
+
+// 부서 검색 버튼 클릭 시 팝업(ChildFrame)을 모달로 띄우는 핸들러
+this.div_search_btn_dept_onclick = function (obj:nexacro.Button, e:nexacro.ClickEventInfo)
+{
+    // 현재 폼 좌표 기준 → 화면(Screen) 좌표로 변환: 좌측 +10, 상단 +10 오프셋
+    var nLeft = system.clientToScreenX(this, 10);
+    var nTop  = system.clientToScreenY(this, 10);
+
+    // 자식 프레임(팝업) 생성: (id, positiontype, x, y, width, height)
+    var objChild = new ChildFrame("popDept", "absolute", nLeft, nTop, 300, 400);
+
+    // 팝업에 로드할 화면(.xfdl) 지정
+    objChild.set_formurl("FrameBase::Pop_DeptSearch.xfdl");
+
+    // 팝업 열기 옵션: 가운데 정렬, 드래그 이동 허용
+    objChild.set_openalign("center middle");
+    objChild.set_dragmovetype("all");
+
+    // 모달로 오픈(showModal): (부모프레임, 전달파라미터, 콜백대상, 콜백함수명)
+    objChild.showModal(
+        this.getOwnerFrame(), // 부모 프레임
+        {},                   // 팝업에 넘길 파라미터(없으면 빈 객체)
+        this,                 // 콜백 받을 대상(현재 폼)
+        "fn_callback_pop"     // 팝업 종료 시 호출될 콜백 함수명
+    );
+};
+
+// 팝업 종료시 콜백 (팝업 → 부모로 반환한 값을 받아서 검색조건 입력란에 세팅)
+this.fn_callback_pop = (sPopupId, sReturn) => {
+	// 팝업에서 반환값이 없으면 빈 문자열로 초기화
+    if (sReturn == undefined)
+    {
+        sReturn = "";
+    }
+
+    // 팝업 ID가 "popDept"인 경우만 처리
+    if (sPopupId == "popDept")
+    {
+        // 반환값이 비어있지 않으면 처리 시작
+        if (sReturn.length > 0)
+        {
+            // "코드|이름" 형식의 문자열을 '|' 기준으로 분리
+            var arrRtn = sReturn.split("|");
+
+            // 첫 번째 값(부서 코드)을 edt_dept_cd에 세팅
+            this.div_search.form.edt_dept_cd.set_value(arrRtn[0]);
+
+            // 두 번째 값(부서 명)을 edt_dept_nm에 세팅
+            this.div_search.form.edt_dept_nm.set_value(arrRtn[1]);
+        }
+    }
+};
+
+// 성별 라디오 동작 (A=전체, 그 외 코드값으로 필터)
+this.div_search_rdo_gender_onitemchanged = function (obj:nexacro.Radio, e:nexacro.ItemChangeEventInfo)
+{
+    // e.postvalue : 변경 후 선택된 라디오의 값(보통 code값)
+    if (e.postvalue == "A") {
+        // 전체 보기: 필터 해제
+        this.ds_emp.filter("");
+    } else {
+        // 필터 적용: 문자 비교는 따옴표로 감싸야 함
+        this.ds_emp.filter("GENDER == '" + e.postvalue + "'");
+    }
+
+    // 선택 행 초기화하고 싶다면(선택 잔상 방지)
+    // this.ds_emp.set_rowposition(-1);
+};
+
+// 리셋 버튼 onclick (검색조건 초기화 + 필터 해제)
+this.div_search_btn_reset_onclick = function (obj:nexacro.Button, e:nexacro.ClickEventInfo)
+{
+    // 입력 필드 초기화
+    this.div_search.form.edt_dept_cd.set_value("");
+    this.div_search.form.edt_dept_nm.set_value("");
+
+    // 라디오 초기화
+    // 라디오가 code/value 기반이면 set_value("A"), 인덱스 기반이면 set_index(0)
+    this.div_search.form.rdo_gender.set_value("A");
+
+    // 필터 해제 → 전체 레코드 표시
+    this.ds_emp.filter("");
+};
+
+// db open 버튼클릭 (LiteDB 연결 시도: datasource 지정 → 이미 연결 여부 확인 → open 호출)
+this.btn_dbopen_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var dbPath = this.edt_dbfile.value;            // DB 파일 경로/이름
+    if (!dbPath) { alert("DB 파일 경로를 입력하세요."); return; } // 경로 미입력 시 안내 후 종료
+
+    var conn = this.LiteDBConnection00;            // 동일 폼 내 Connection 컴포넌트 참조
+
+    // 1) 데이터소스 지정 (매번 확실히 지정)
+    conn.set_datasource(dbPath);
+
+    // 2) 이미 연결돼 있으면 굳이 open() 하지 않음
+    if (conn.isConnected()) {
+        alert("이미 연결되어 있습니다.");
+        return;
+    }
+
+    // 3) 연결 오픈 (성공 시 onsuccess(reason=5) 콜백 발생)
+    conn.open(); // ← 이걸 눌러야 onsuccess(reason=5)가 발생
+};
+
+// LiteDBConnection 오류 콜백 (오픈/클로즈 등 실패 시 상세 코드 확인)
+this.LiteDBConnection00_onerror = function(obj:nexacro.LiteDBConnection,e:nexacro.LiteDBErrorEventInfo)
+{
+	// e.statuscode.toString() 메서드를 확인하여 어떤 코드가 발생되는지 확인한다.
+    this.alert("e.statuscode.toString() " + e.statuscode.toString());
+
+    switch(e.statuscode.toString()) {
+        case "1203":
+            alert("DB close failed."); // 닫기 실패
+            break;
+
+        case "1205":
+            // datasource 재지정 후 재오픈 (경로가 바뀌었거나 초기 지정 안 된 경우 대비)
+            this.LiteDBConnection00.set_datasource(this.edt_dbfile.value);
+            this.LiteDBConnection00.open();
+            break;
+
+        case "1206":
+            alert("DB open failed.");  // 열기 실패
+            break;
+
+        case "00001":
+        case "1201":
+        case "1202":
+        case "1204":
+        case "1207":
+        default:
+            // 그 외 상세 오류 정보 출력
+            var strResult = "[LiteDBConnection00_onerror]";
+            strResult += "\n[" + e.errortype + " : " + e.statuscode + "] " + e.errormsg;
+            strResult += "\n\ne.ldberrorcode: " + e.ldberrorcode;
+            strResult += "\n\ne.ldberrormsg: " + e.ldberrormsg;
+            alert(strResult);
+            break;
+    }
+};
+
+// LiteDBConnection 성공 콜백 (reason 값으로 동작 구분)
+this.LiteDBConnection00_onsuccess = function(obj:nexacro.LiteDBConnection,e:nexacro.LiteDBEventInfo)
+{
+	alert("e.reason : " + e.reason); // 디버그: 어떤 이유로 성공 콜백이 왔는지 확인
+
+    switch(e.reason) {
+        case 2: // LiteDBConnection close()
+            this.grd_list.set_visible(false);
+            alert("DB close succeed.");
+            break;
+
+        case 4: // LiteDBConnection isConnected() → 이미 연결 상태
+            alert("Already connected to DB.");
+            break;
+
+        case 5: // LiteDBConnection open() 성공
+            this.grd_list.set_visible(true);
+
+            // DB 연결 객체를 Statement에 설정하고 쿼리 실행
+            this.LiteDBStatement00.set_ldbconnection(this.LiteDBConnection00);
+            this.LiteDBStatement00.executeQuery("select * from tb_emp"); // 결과는 Statement onsuccess에서 수신
+            break;
+
+        case 1:
+        case 3:
+        case 6:
+        default:
+            // 기타 성공(reason) 코드가 들어오는 경우 별도 처리 없음
+            break;
+    }
+};
+
+// LiteDBStatement 오류 콜백 (쿼리 실행 실패 등)
+this.LiteDBStatement00_onerror = function(obj:nexacro.LiteDBStatement,e:nexacro.LiteDBErrorEventInfo)
+{
+	switch(e.statuscode.toString())
+    {
+        case "1210": // LiteDBStatement executeQuery() error
+            alert("LiteDBStatement executeQuery() error");
+            break;
+
+        case "1211": // LiteDBStatement executeUpdate() error
+            alert("LiteDBStatement executeUpdate() error");
+            break;
+
+        case "00001": // Parameter setting error
+        case "1201":  // DB response timeout error
+        default:      // Unknown error
+            var strResult = "[LiteDBStatement00_onerror]";
+            strResult += "\n[" + e.errortype + " : " + e.statuscode + "] " + e.errormsg;
+            strResult += "\n\ne.ldberrorcode: " + e.ldberrorcode;
+            strResult += "\n\ne.ldberrormsg: " + e.ldberrormsg;
+            alert(strResult);
+            break;
+    }
+};
+
+// LiteDBStatement 성공 콜백 (SELECT 결과 수신 지점)
+this.LiteDBStatement00_onsuccess = function(obj:nexacro.LiteDBStatement,e:nexacro.LiteDBEventInfo)
+{
+	// 쿼리 결과(e.returnvalue)를 ds_emp에 반영하여 그리드 바인딩 데이터로 사용
+	this.ds_emp.copyData(e.returnvalue);   // 컬럼 구조가 동일하다는 가정 하 복사 (구조까지 복사하려면 copyFrom 사용 고려)
+	this.grd_list.createFormat();          // 현재 바인딩된 ds의 컬럼으로 포맷 자동 생성
+};
+]]></Script>
+    <Bind>
+      <BindItem id="item1" compid="div_detail.form.mak_id" propid="value" datasetid="ds_emp" columnid="EMPL_ID"/>
+      <BindItem id="item2" compid="div_detail.form.txt_memo" propid="value" datasetid="ds_emp" columnid="MEMO"/>
+      <BindItem id="item3" compid="div_detail.form.chk_married" propid="value" datasetid="ds_emp" columnid="MARRIED"/>
+      <BindItem id="item4" compid="div_detail.form.rdo_gender" propid="value" datasetid="ds_emp" columnid="GENDER"/>
+      <BindItem id="item5" compid="div_detail.form.cal_date" propid="value" datasetid="ds_emp" columnid="HIRE_DATE"/>
+      <BindItem id="item7" compid="div_detail.form.lst_pos" propid="value" datasetid="ds_emp" columnid="POS_CD"/>
+      <BindItem id="item8" compid="div_detail.form.msk_salary" propid="value" datasetid="ds_emp" columnid="SALARY"/>
+      <BindItem id="item0" compid="div_detail.form.cbo_dept" propid="text" datasetid="ds_emp" columnid="DEPT_CD"/>
+      <BindItem id="item6" compid="div_detail.form.edt_name" propid="value" datasetid="ds_emp" columnid="FULL_NAME"/>
+    </Bind>
+  </Form>
+</FDL>

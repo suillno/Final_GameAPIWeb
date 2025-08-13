@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+
+<settings>
+<setting value="NULL" name="jdbcTypeForNull"/>
+</settings>
+
+<!-- typeAliases -->
+<typeAliases>
+<!-- 	<typeAlias type="com.seed.study.vo.MainVo" alias="Main"/> -->
+<!-- 	<typeAlias type="com.seed.study.vo.InsertUser" alias="Iu"/> -->
+</typeAliases>
+
+<!-- DB정보를 썼던 부분 environments 엘리먼트로 dataSource 등등의 정보를 썼는데 스프링에서는 
+그 정보를 이 파일에서 안쓴다! 기존에 DB연결 설정에 대한 정보를 mybatis-config.xml에서 작성-> -->
+</configuration>

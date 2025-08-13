@@ -41,6 +41,8 @@
     <Component type="JavaScript" id="DateField" classname="nexacro.DateField"/>
     <Component type="JavaScript" id="DateRangePicker" classname="nexacro.DateRangePicker"/>
     <Component type="JavaScript" id="PopupDateRangePicker" classname="nexacro.PopupDateRangePicker"/>
+    <Component type="JavaScript" id="LiteDBConnection" classname="nexacro.LiteDBConnection"/>
+    <Component type="JavaScript" id="LiteDBStatement" classname="nexacro.LiteDBStatement"/>
   </Components>
   <Services>
     <Service prefixid="theme" type="resource" url="./_resource_/_theme_/" version="0" cachelevel="session" include_subdir="true"/>
@@ -52,6 +54,7 @@
     <Service prefixid="extlib" type="resource" url="./_extlib_/" version="0" cachelevel="session" include_subdir="true"/>
     <Service prefixid="Base" type="form" url="./Base/" version="0" cachelevel="session" include_subdir="false" communicationversion="0"/>
     <Service prefixid="FrameBase" type="form" url="./FrameBase/" version="0" cachelevel="session" include_subdir="false" communicationversion="0"/>
+    <Service prefixid="From" type="form" url="./From/" version="0" cachelevel="session" include_subdir="false" communicationversion="0"/>
   </Services>
   <Protocols/>
   <DeviceAdaptors/>

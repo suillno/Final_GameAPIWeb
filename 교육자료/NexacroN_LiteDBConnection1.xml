@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Context path="/NexacroN_LiteDBConnection1" docBase="C:\Program Files\Apache Software Foundation\Tomcat 9.0\webapps\NexacroN_LiteDBConnection1"
+	debug="0" prvileged="true" reloadable="true">
+	<Logger className="org.apache.catalina.logger.FileLogger"
+		directory="logs" prefix="localhost_log." suffix=".txt"
+	/>
+</Context>

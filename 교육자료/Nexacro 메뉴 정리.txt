@@ -1,0 +1,112 @@
+옵션 A) 가장 쉬움 — Menu 컴포넌트로 전환(권장)
+Nexacro의 Menu는 기본이 가로 배치이고, 다단계(level)도 지원합니다. 지금 gds_menu(MENU_ID, MENU_NAME, MENU_LEVEL, FORM_URL) 구조면 그대로 바인딩 가능.
+
+Left 영역에 Menu 컴포넌트 드래그
+
+속성 설정
+
+innerdataset = gds_menu
+
+captioncolumn = MENU_NAME
+
+idcolumn = MENU_ID
+
+levelcolumn = MENU_LEVEL
+
+(가로폭은 원하는 만큼 늘리기)
+
+onmenuclick 이벤트에 화면 열기:
+
+javascript
+복사
+편집
+this.Menu00_onmenuclick = function (obj, e)
+{
+    var app = nexacro.getApplication();
+    var ds  = app.gds_menu;
+
+    // 클릭한 메뉴 ID로 행 찾기
+    var row = ds.findRow("MENU_ID", e.id);
+    if (row < 0) return;
+
+    var url = ds.getColumn(row, "FORM_URL");
+    if (!url || url == "[Undefined]") return;
+
+    app.fn_openForm(e.id, url);  // 전역 오픈 함수
+};
+→ 이렇게 하면 상단 가로 메뉴바처럼 바로 동작합니다.
+
+옵션 B) 계속 Grid를 쓸 경우 — 데이터를 가로(열)로 피벗해서 바인딩
+Grid는 “행 단위”라서, 가로로 보이게 하려면 临시 데이터셋을 만들고 각 메뉴를 열(Column)로 옮겨서 그리드에 연결해야 합니다.
+
+임시 데이터셋 생성 & 채우기
+
+javascript
+복사
+편집
+// 폼 onload 등에서
+this.makeHorizontalMenu = function ()
+{
+    var app = nexacro.getApplication();
+    var src = app.gds_menu;
+
+    // 기존 있으면 삭제
+    if (this.ds_hmenu) this.removeChild("ds_hmenu");
+
+    var ds = new Dataset("ds_hmenu", this);
+    this.addChild("ds_hmenu", ds);
+
+    // 메뉴 개수만큼 컬럼 생성 (표시 캡션)
+    for (var i = 0; i < src.getRowCount(); i++) {
+        ds.addColumn("C"+i, "string");
+    }
+
+    // 한 줄(row)에 모두 담기
+    var r = ds.addRow();
+    for (var i = 0; i < src.getRowCount(); i++) {
+        ds.setColumn(r, "C"+i, src.getColumn(i, "MENU_NAME"));
+    }
+
+    // Grid에 바인딩
+    this.Grid00.set_binddataset("ds_hmenu");
+
+    // 컬럼 수만큼 포맷 동적 구성
+    var cols = "";
+    var cells = "";
+    for (var i = 0; i < src.getRowCount(); i++) {
+        cols  += '<Column size="100"/>';
+        cells += '<Cell col="'+i+'" text="bind:C'+i+'"/>';
+    }
+
+    var formats =
+        '<Formats><Format id="default">'+
+        '<Columns>'+ cols +'</Columns>'+
+        '<Rows><Row size="28"/></Rows>'+
+        '<Band id="body">'+ cells +'</Band>'+
+        '</Format></Formats>';
+
+    this.Grid00.set_formats(formats);
+};
+클릭 시 어떤 메뉴인지 역매핑
+
+javascript
+복사
+편집
+this.Grid00_oncellclick = function (obj, e)
+{
+    if (e.col < 0) return;
+
+    var app = nexacro.getApplication();
+    var src = app.gds_menu;
+
+    // e.col == 원본 ds의 행 인덱스
+    var row = e.col;
+
+    var id  = src.getColumn(row, "MENU_ID");
+    var url = src.getColumn(row, "FORM_URL");
+    if (!url || url == "[Undefined]") return;
+
+    app.fn_openForm(id, url);
+};
+이 방법은 메뉴 개수가 변하면 makeHorizontalMenu()를 다시 호출해 재구성하면 됩니다.
+단, 다단계 메뉴(MENU_LEVEL) 를 Grid로 표현하려면 포맷/로직이 훨씬 복잡해집니다. 그래서 Menu 컴포넌트 사용이 훨씬 수월합니다.

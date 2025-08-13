@@ -3,15 +3,26 @@
   <Form id="Form_Top" width="800" height="50" titletext="Form_Top">
     <Layouts>
       <Layout width="800" height="50" screenid="Desktop_screen">
-        <Div id="Div00" taborder="0" text="Div00" left="24" top="12" width="746" height="32" background="#1155AA">
-          <Layouts>
-            <Layout>
-              <Static id="Static00" taborder="0" text="Main menu1" left="33" top="9" width="120" height="19" color="#ffffff"/>
-              <Static id="Static00_00" taborder="1" text="Main menu2" left="146" top="9" width="120" height="19" color="#ffffff"/>
-            </Layout>
-          </Layouts>
-        </Div>
+        <Static id="Static00" taborder="1" text="nexacro" left="10" top="10" width="120" height="33" textAlign="center" font="bold 20px/normal &quot;Malgun Gothic&quot;"/>
+        <Menu id="Menu00" taborder="1" left="172" top="8" width="598" height="35" innerdataset="gds_menu" captioncolumn="MENU_NAME" idcolumn="MENU_ID" levelcolumn="MENU_LEVEL" onmenuclick="Menu00_onmenuclick"/>
       </Layout>
+      <Layout name="App_Desktop_MDI" width="1280" height="50" screenid="App_Desktop_MDI"/>
     </Layouts>
+    <Script type="xscript5.1"><![CDATA[
+this.Menu00_onmenuclick = function(obj:nexacro.Menu,e:nexacro.MenuClickEventInfo)
+{
+	var app = nexacro.getApplication();
+    var ds  = app.gds_menu;
+
+    // 클릭한 메뉴 ID로 행 찾기
+    var row = ds.findRow("MENU_ID", e.id);
+    if (row < 0) return;
+
+    var url = ds.getColumn(row, "FORM_URL");
+    if (!url || url == "[Undefined]") return;
+
+    app.fn_openForm(app, e.id, url);
+};
+]]></Script>
   </Form>
 </FDL>

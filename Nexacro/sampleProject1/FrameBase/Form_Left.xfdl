@@ -1,8 +1,53 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <FDL version="2.1">
-  <Form id="Form_Left" width="200" height="718" titletext="Form_Left">
+  <Form id="Form_Left" width="200" height="718" titletext="Form_Left" onclick="Form_Left_onclick">
     <Layouts>
-      <Layout width="200" height="718" screenid="Desktop_screen"/>
+      <Layout width="200" height="718" screenid="Desktop_screen">
+        <Grid id="Grid00" taborder="0" left="6" top="4" width="184" height="636" treeinitstatus="collapse,all" treeusecheckbox="false" binddataset="gds_menu" oncelldblclick="Grid00_oncelldblclick">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="153"/>
+              </Columns>
+              <Rows>
+                <Row size="24"/>
+              </Rows>
+              <Band id="body">
+                <Cell text="bind:MENU_NAME" displaytype="treeitemcontrol" edittype="tree" treelevel="bind:MENU_LEVEL"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+      </Layout>
+      <Layout name="App_Desktop_MDI" width="200" height="718" screenid="App_Desktop_MDI"/>
     </Layouts>
+    <Script type="xscript5.1"><![CDATA[// 그리드에서 셀 더블클릭 시 동작
+this.Grid00_oncelldblclick = function (obj, e)  
+{
+    // 현재 실행 중인 Nexacro 애플리케이션 객체 참조
+    var app = nexacro.getApplication();
+
+    // 클릭한 행(row) 인덱스 가져오기
+    var row = e.row;
+
+    // 유효하지 않은 행(헤더 영역 클릭 등)이면 함수 종료
+    if (row < 0) return;
+	
+    // 디버그용 로그 출력 (행 번호 확인)
+    app.trace("테스트", row);
+	
+    // 해당 행에서 메뉴 ID 값 가져오기
+    var id  = app.gds_menu.getColumn(row, "MENU_ID");
+
+    // 해당 행에서 화면 URL 값 가져오기
+    var url = app.gds_menu.getColumn(row, "FORM_URL");
+
+    // URL이 없거나 정의되지 않은 경우(폴더 메뉴 등) 실행 중단
+    if (!url || url == "[Undefined]") return;
+
+    // 전역 함수 fn_openForm 호출 → 화면 열기
+    // 현재 Application 객체(app)와 메뉴 ID, URL 전달
+    app.fn_openForm(app, id, url); 
+};]]></Script>
   </Form>
 </FDL>

@@ -1,5 +1,77 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <AppVariables version="2.0">
-  <Datasets/>
+  <Datasets>
+    <Dataset id="gds_menu">
+      <ColumnInfo>
+        <Column id="MENU_ID" type="STRING" size="256"/>
+        <Column id="MENU_NAME" type="STRING" size="256"/>
+        <Column id="MENU_LEVEL" type="STRING" size="256"/>
+        <Column id="FORM_URL" type="STRING" size="256"/>
+      </ColumnInfo>
+      <Rows>
+        <Row>
+          <Col id="MENU_ID">1</Col>
+          <Col id="MENU_NAME">Main_Menu1</Col>
+          <Col id="MENU_LEVEL">0</Col>
+          <Col id="FORM_URL">[Undefined]</Col>
+        </Row>
+        <Row>
+          <Col id="MENU_ID">2</Col>
+          <Col id="MENU_NAME">Sub_Menu1</Col>
+          <Col id="MENU_LEVEL">1</Col>
+          <Col id="FORM_URL">[Undefined]</Col>
+        </Row>
+        <Row>
+          <Col id="MENU_ID">3</Col>
+          <Col id="MENU_NAME">Form_Hello</Col>
+          <Col id="MENU_LEVEL">2</Col>
+          <Col id="FORM_URL">Base::Hello.xfdl</Col>
+        </Row>
+        <Row>
+          <Col id="MENU_ID">4</Col>
+          <Col id="MENU_NAME">Form_Emp</Col>
+          <Col id="MENU_LEVEL">2</Col>
+          <Col id="FORM_URL">Base::Form_Emp.xfdl</Col>
+        </Row>
+        <Row>
+          <Col id="MENU_ID">5</Col>
+          <Col id="MENU_NAME">Sub_Menu2</Col>
+          <Col id="MENU_LEVEL">1</Col>
+          <Col id="FORM_URL">[Undefined]</Col>
+        </Row>
+        <Row>
+          <Col id="MENU_ID">6</Col>
+          <Col id="MENU_NAME">Form1</Col>
+          <Col id="MENU_LEVEL">2</Col>
+          <Col id="FORM_URL">[Undefined]</Col>
+        </Row>
+        <Row>
+          <Col id="MENU_ID">7</Col>
+          <Col id="MENU_NAME">Main_Menu2</Col>
+          <Col id="MENU_LEVEL">0</Col>
+          <Col id="FORM_URL">[Undefined]</Col>
+        </Row>
+        <Row>
+          <Col id="MENU_ID">8</Col>
+          <Col id="MENU_NAME">Sub_Menu1</Col>
+          <Col id="MENU_LEVEL">1</Col>
+          <Col id="FORM_URL">[Undefined]</Col>
+        </Row>
+        <Row>
+          <Col id="MENU_ID">9</Col>
+          <Col id="MENU_NAME">Form1</Col>
+          <Col id="MENU_LEVEL">2</Col>
+          <Col id="FORM_URL">[Undefined]</Col>
+        </Row>
+        <Row>
+          <Col id="MENU_ID">10</Col>
+          <Col id="MENU_NAME">Form2</Col>
+          <Col id="MENU_LEVEL">2</Col>
+          <Col id="FORM_URL">[Undefined]</Col>
+        </Row>
+      </Rows>
+    </Dataset>
+  </Datasets>
   <Variables/>
+  <DataObjects/>
 </AppVariables>
